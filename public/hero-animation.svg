@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <!-- Background Elements -->
+  <circle cx="400" cy="300" r="150" fill="url(#gradient1)" opacity="0.1">
+    <animate attributeName="r" values="150;170;150" dur="8s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="400" cy="300" r="250" fill="url(#gradient2)" opacity="0.05">
+    <animate attributeName="r" values="250;270;250" dur="12s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Code Elements -->
+  <g transform="translate(280, 180)">
+    <!-- Browser Window Frame -->
+    <rect x="10" y="10" width="280" height="220" rx="8" fill="#F9FAFB" stroke="#2563EB" stroke-width="2">
+      <animate attributeName="y" values="10;15;10" dur="6s" repeatCount="indefinite" />
+    </rect>
+    
+    <!-- Browser Window Top Bar -->
+    <rect x="10" y="10" width="280" height="30" rx="8 8 0 0" fill="#2563EB">
+      <animate attributeName="y" values="10;15;10" dur="6s" repeatCount="indefinite" />
+    </rect>
+    
+    <!-- Window Controls -->
+    <circle cx="30" cy="25" r="5" fill="#FC6058">
+      <animate attributeName="cy" values="25;30;25" dur="6s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="50" cy="25" r="5" fill="#FEC02F">
+      <animate attributeName="cy" values="25;30;25" dur="6s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="70" cy="25" r="5" fill="#2ACA3E">
+      <animate attributeName="cy" values="25;30;25" dur="6s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Code Lines -->
+    <rect x="30" y="60" width="160" height="10" rx="2" fill="#E5E7EB">
+      <animate attributeName="y" values="60;65;60" dur="6s" repeatCount="indefinite" />
+    </rect>
+    <rect x="30" y="80" width="240" height="10" rx="2" fill="#E5E7EB">
+      <animate attributeName="y" values="80;85;80" dur="6s" repeatCount="indefinite" />
+    </rect>
+    <rect x="30" y="100" width="200" height="10" rx="2" fill="#E5E7EB">
+      <animate attributeName="y" values="100;105;100" dur="6s" repeatCount="indefinite" />
+    </rect>
+    <rect x="30" y="120" width="180" height="10" rx="2" fill="#E5E7EB">
+      <animate attributeName="y" values="120;125;120" dur="6s" repeatCount="indefinite" />
+    </rect>
+    <rect x="30" y="140" width="220" height="10" rx="2" fill="#E5E7EB">
+      <animate attributeName="y" values="140;145;140" dur="6s" repeatCount="indefinite" />
+    </rect>
+    <rect x="30" y="160" width="120" height="10" rx="2" fill="#E5E7EB">
+      <animate attributeName="y" values="160;165;160" dur="6s" repeatCount="indefinite" />
+    </rect>
+    
+    <!-- Highlight Elements -->
+    <rect x="30" y="100" width="60" height="10" rx="2" fill="#3B82F6">
+      <animate attributeName="y" values="100;105;100" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0.7;1" dur="3s" repeatCount="indefinite" />
+    </rect>
+    <rect x="190" y="120" width="40" height="10" rx="2" fill="#EC4899">
+      <animate attributeName="y" values="120;125;120" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite" />
+    </rect>
+    <rect x="60" y="160" width="30" height="10" rx="2" fill="#10B981">
+      <animate attributeName="y" values="160;165;160" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="5s" repeatCount="indefinite" />
+    </rect>
+  </g>
+
+  <!-- Floating Elements -->
+  <g>
+    <!-- React Symbol -->
+    <g transform="translate(190, 270)">
+      <circle cx="0" cy="0" r="8" fill="#61DAFB">
+        <animate attributeName="r" values="8;10;8" dur="3s" repeatCount="indefinite" />
+      </circle>
+      <ellipse cx="0" cy="0" rx="30" ry="10" stroke="#61DAFB" fill="none" stroke-width="2" transform="rotate(30)">
+        <animate attributeName="transform" values="rotate(0);rotate(360)" dur="10s" repeatCount="indefinite" />
+      </ellipse>
+      <ellipse cx="0" cy="0" rx="30" ry="10" stroke="#61DAFB" fill="none" stroke-width="2" transform="rotate(90)">
+        <animate attributeName="transform" values="rotate(60);rotate(420)" dur="15s" repeatCount="indefinite" />
+      </ellipse>
+      <ellipse cx="0" cy="0" rx="30" ry="10" stroke="#61DAFB" fill="none" stroke-width="2" transform="rotate(150)">
+        <animate attributeName="transform" values="rotate(120);rotate(480)" dur="20s" repeatCount="indefinite" />
+      </ellipse>
+      <animate attributeName="transform" values="translate(190, 270);translate(190, 275);translate(190, 270)" dur="4s" repeatCount="indefinite" />
+    </g>
+  </g>
+
+  <!-- Connection Lines -->
+  <path d="M300 300 L340 250" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="4 4">
+    <animate attributeName="d" values="M300 300 L340 250;M300 305 L340 255;M300 300 L340 250" dur="6s" repeatCount="indefinite" />
+  </path>
+  <path d="M500 300 L540 320" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="4 4">
+    <animate attributeName="d" values="M500 300 L540 320;M500 305 L540 325;M500 300 L540 320" dur="6s" repeatCount="indefinite" />
+  </path>
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+    <linearGradient id="gradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EC4899" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+  </defs>
+</svg>
