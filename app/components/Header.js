@@ -26,25 +26,23 @@ const navItemVariants = {
 };
 
 const mobileMenuVariants = {
-  hidden: { opacity: 0, height: 0, y: -20 },
+  hidden: { opacity: 0, height: 0 },
   visible: { 
     opacity: 1, 
     height: "auto",
-    y: 0,
     transition: {
-      duration: 0.3,
-      type: "spring",
-      stiffness: 300,
-      damping: 24
+      opacity: { duration: 0.15 },
+      height: { duration: 0.2 },
+      ease: "easeOut"
     }
   },
   exit: { 
     opacity: 0, 
     height: 0,
-    y: -20,
     transition: { 
-      duration: 0.2,
-      ease: "easeInOut"
+      opacity: { duration: 0.1 },
+      height: { duration: 0.15 },
+      ease: "easeIn"
     }
   }
 };
@@ -73,7 +71,7 @@ export default function Header() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.3 }}
         >
-          <Link href={"/"} className="font-bold tracking-wide text-xl sm:text-2xl" style={{ fontFamily: 'Poppins, Urbanist, sans-serif' }}>
+          <Link href={"/"} className="font-bold tracking-wide text-3xl sm:text-2xl" style={{ fontFamily: 'Poppins, Urbanist, sans-serif' }}>
             <motion.span 
               className="text-primary"
               whileHover={{ scale: 1.05 }}
@@ -118,20 +116,20 @@ export default function Header() {
           className="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
           aria-label="Toggle menu"
           onClick={() => setMenuOpen(!menuOpen)}
-          whileTap={{ scale: 0.9 }}
-          transition={{ duration: 0.2 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ duration: 0.1 }}
         >
-          <span className={`block w-6 h-0.5 bg-textPrimary mb-1 transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-textPrimary mb-1 transition-opacity duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-textPrimary transition-transform duration-300 ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-textPrimary mb-1 transition-transform duration-150 ${menuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-textPrimary mb-1 transition-opacity duration-150 ${menuOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-textPrimary transition-transform duration-150 ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
         </motion.button>
       </nav>
       
       {/* Mobile Menu */}
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {menuOpen && (
           <motion.ul 
-            className="md:hidden bg-white shadow-lg absolute w-full left-0 top-full flex flex-col items-center space-y-4 py-4 z-40 overflow-hidden"
+            className="md:hidden bg-white shadow-lg absolute w-full left-0 top-full flex flex-col items-center space-y-4 py-4 z-40 overflow-hidden will-change-transform"
             initial="hidden"
             animate="visible"
             exit="exit"
@@ -140,14 +138,14 @@ export default function Header() {
             {navLinks.map((link, i) => (
               <motion.li 
                 key={link.href}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.1, duration: 0.2 }}
-                whileHover={{ scale: 1.05, x: 5 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.1, delay: i * 0.05 }}
+                className="w-full text-center"
               >
                 <Link 
                   href={link.href} 
-                  className="text-textSecondary hover:text-primary transition-colors duration-300 block px-4 py-2"
+                  className="text-textSecondary hover:text-primary transition-colors duration-200 block px-4 py-2"
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.label}
