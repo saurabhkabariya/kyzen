@@ -201,8 +201,8 @@ export default function Footer() {
                 <FaEnvelope className="text-blue-400 mt-1 mr-3" />
                 <div>
                   <p className="text-white text-sm font-medium">Email</p>
-                  <a href="mailto:contact@codecatalyst.com" className="text-gray-400 text-sm hover:text-blue-400 transition-colors duration-300">
-                    contact@codecatalyst.com
+                  <a href="mailto:codecatalyst8@gmail.com" className="text-gray-400 text-sm hover:text-blue-400 transition-colors duration-300">
+                    codecatalyst8@gmail.com
                   </a>
                 </div>
               </motion.li>

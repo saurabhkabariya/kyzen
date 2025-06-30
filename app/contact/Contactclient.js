@@ -96,25 +96,46 @@ export default function ContactPage() {
     return Object.keys(newErrors).length === 0;
   };
   
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    if (validateForm()) {
-      setIsSubmitting(true);
-      
-      // Simulate form submission
-      setTimeout(() => {
-        setIsSubmitting(false);
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (validateForm()) {
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xldnzjpj', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          message: formState.message,
+        }),
+      });
+
+      if (response.ok) {
         setSubmitSuccess(true);
         setFormState({ name: '', email: '', message: '' });
-        
-        // Reset success message after 3 seconds
+
         setTimeout(() => {
           setSubmitSuccess(false);
         }, 3000);
-      }, 1000);
+      } else {
+        console.error('Formspree error:', await response.json());
+        alert('Something went wrong. Please try again later.');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
-  };
+  }
+};
+
   
   return (
     <Section className="relative min-h-[70vh] flex flex-col items-center justify-center bg-gradient-to-br from-blue-50/60 to-white overflow-hidden py-16" aria-label="Contact Us">
@@ -179,8 +200,8 @@ export default function ContactPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </div>
-            <a href="mailto:contact@codecatalyst.com" className="text-blue-600 font-medium hover:underline">
-              contact@codecatalyst.com
+            <a href="mailto:codecatalyst8@gmail.com" className="text-blue-600 font-medium hover:underline">
+              codecatalyst8@gmail.com
             </a>
           </div>
         </motion.div>
