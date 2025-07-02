@@ -5,6 +5,7 @@ import { useRef } from 'react';
 import { FaRocket, FaLightbulb, FaShoppingCart, FaRedo, FaBug, FaTools, FaCloudUploadAlt, FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaBootstrap } from 'react-icons/fa';
 import { SiNextdotjs, SiExpress, SiMongodb, SiTailwindcss, SiMaterialdesign } from 'react-icons/si';
 import Link from 'next/link';
+import ProjectsSection from './components/ProjectsSection';
 
 const services = [
   {
@@ -325,6 +326,7 @@ export default function HomeClient() {
           </motion.div>
         </motion.div>
       </Section>
+      <ProjectsSection />
     </>
   );
 }
