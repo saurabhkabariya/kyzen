@@ -281,7 +281,9 @@ export default function HomeClient() {
             ))}
           </motion.div>
         </motion.div>
-      </Section>      {/* Technology Section */}
+      </Section>     
+      <ProjectsSection />
+     {/* Technology Section */}
       <Section className="bg-blue-50" id="technology" aria-label="Technology Stack">
         <motion.div
           ref={techRef}
@@ -318,7 +320,7 @@ export default function HomeClient() {
                   {tech.icon}
                 </motion.div>
                 <span className="mt-3 text-base font-semibold text-gray-800 font-sans">{tech.name}</span>
-                <span className="absolute left-1/2 -translate-x-1/2 bottom-[-2.5rem] w-max px-3 py-2 rounded bg-gray-900 text-white text-xs opacity-0 group-hover:opacity-100 group-hover:z-50 group-hover:translate-y-2 transition-all pointer-events-none z-50 whitespace-nowrap">
+                <span className="absolute left-1/2 bottom-[-5rem] -translate-x-1/2 md:bottom-[-2.5rem] md:w-max px-3 py-2 rounded bg-gray-900 text-white text-xs opacity-0 group-hover:opacity-100 group-hover:z-50 group-hover:translate-y-2 transition-all pointer-events-none z-50 md:whitespace-nowrap">
                   {tech.desc}
                 </span>
               </motion.div>
@@ -326,7 +328,7 @@ export default function HomeClient() {
           </motion.div>
         </motion.div>
       </Section>
-      <ProjectsSection />
+      
     </>
   );
 }

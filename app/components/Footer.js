@@ -6,6 +6,7 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaTwitter, FaGithub, F
 const quickLinks = [
   { href: '/', label: 'Home' },
   { href: '/#services', label: 'Services' },
+  { href: '/projects', label: 'Projects' },
   { href: '/#technology', label: 'Technology' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
