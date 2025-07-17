@@ -3,7 +3,7 @@ import ProjectCard from '../components/ProjectCard';
 
 const projects = [
   {
-    image: '/picknbuy.png',
+    image: '/picknbuy.webp',
     name: 'PickNBuy',
     description: 'Ecommerce + admin dashboard. Template + minor customization.',
     oldPrice: '$199',
@@ -11,7 +11,7 @@ const projects = [
     liveLink: 'https://picknbuyecom.netlify.app/',
   },
   {
-    image: '/motivementor.png',
+    image: '/motivementor.webp',
     name: 'MotiveMentor',
     description: 'MVP design demo for coaching/mentoring platform.',
     oldPrice: '',
@@ -19,7 +19,7 @@ const projects = [
     liveLink: 'https://motivementor.vercel.app/',
   },
   {
-    image: '/swifttech.png',
+    image: '/swifttech.webp',
     name: 'SwiftTech',
     description: 'Landing page template. Template + minor customization.',
     oldPrice: '$25',
@@ -27,7 +27,7 @@ const projects = [
     liveLink: 'https://swift-tech-olive.vercel.app/',
   },
   {
-    image: '/codecatalyst.png',
+    image: '/codecatalyst.webp',
     name: 'CodeCatalyst',
     description: 'Animated 3-page website. Template + minor customization.',
     oldPrice: '$25',
@@ -35,7 +35,7 @@ const projects = [
     liveLink: 'https://codecatalystweb.vercel.app/',
   },
   {
-    image: '/supertutor.png',
+    image: '/supertutor.webp',
     name: 'Supertutor',
     description: 'Course-selling landing page for tutors. Template + minor customization.',
     oldPrice: '$25',

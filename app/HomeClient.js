@@ -228,9 +228,9 @@ export default function HomeClient() {
                     repeatType: "reverse"
                   }}
                 />                <img 
-                  src="/hero-animation.svg" 
+                  src="/CodeCatalystHome.webp" 
                   alt="Web development illustration" 
-                  className="relative z-10 w-full h-auto drop-shadow-xl"
+                  className="relative z-10 w-full h-auto rounded-3xl shadow-2xl transition-transform duration-500 ease-in-out hover:scale-105"
                 />
               </div>
             </motion.div>

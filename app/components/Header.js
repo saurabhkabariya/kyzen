@@ -91,7 +91,7 @@ export default function Header() {
         </motion.div>
         
         {/* Desktop Nav */}
-        <ul className="hidden md:flex space-x-8 text-textSecondary font-medium">
+        <ul className="hidden md:flex space-x-8 text-textSecondary font-bold">
           {navLinks.map((link, i) => (
             <motion.li 
               key={link.href}
@@ -146,7 +146,7 @@ export default function Header() {
               >
                 <Link 
                   href={link.href} 
-                  className="text-textSecondary hover:text-primary transition-colors duration-200 block px-4 py-2"
+                  className="text-textSecondary hover:text-primary transition-colors duration-200 block px-4 py-2 font-bold"
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.label}
