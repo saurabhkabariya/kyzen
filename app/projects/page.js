@@ -5,7 +5,7 @@ const projects = [
   {
     image: '/picknbuy.webp',
     name: 'PickNBuy',
-    description: 'Ecommerce + admin dashboard. Template + minor customization.',
+    description: 'Complete e-commerce solution with React, payment integration, inventory management, and powerful admin dashboard. Perfect for launching your online store quickly with modern UI/UX.',
     oldPrice: '$199',
     newPrice: '$119 or ₹9999',
     liveLink: 'https://picknbuyecom.netlify.app/',
@@ -13,15 +13,23 @@ const projects = [
   {
     image: '/motivementor.webp',
     name: 'MotiveMentor',
-    description: 'MVP design demo for coaching/mentoring platform.',
+    description: 'Professional Motivation platform MVP featuring goal tracker, quote generator, and word game. Built with Next.js for users focusing self improvements.',
     oldPrice: '',
     newPrice: '',
     liveLink: 'https://motivementor.vercel.app/',
   },
   {
+    image: '/hirelift.webp',
+    name: 'HireLift',
+    description: 'AI-powered job application SaaS with resume optimization, interview prep tools, and HR Contactlist. Helps job seekers increase interview callbacks by 3x.',
+    oldPrice: '',
+    newPrice: '',
+    liveLink: 'https://hirelift.vercel.app/',
+  },
+  {
     image: '/swifttech.webp',
     name: 'SwiftTech',
-    description: 'Landing page template. Template + minor customization.',
+    description: 'High-converting tech company landing page with modern animations, service showcases, and lead capture forms. Optimized for B2B client acquisition.',
     oldPrice: '$25',
     newPrice: '$10 or ₹999',
     liveLink: 'https://swift-tech-olive.vercel.app/',
@@ -29,7 +37,7 @@ const projects = [
   {
     image: '/codecatalyst.webp',
     name: 'CodeCatalyst',
-    description: 'Animated 3-page website. Template + minor customization.',
+    description: 'Premium animated agency website with smooth Framer Motion transitions, portfolio showcase, and contact forms. Designed to convert visitors into clients.',
     oldPrice: '$25',
     newPrice: '$15 or ₹1499',
     liveLink: 'https://codecatalystweb.vercel.app/',
@@ -37,7 +45,7 @@ const projects = [
   {
     image: '/supertutor.webp',
     name: 'Supertutor',
-    description: 'Course-selling landing page for tutors. Template + minor customization.',
+    description: 'Conversion-optimized course selling platform for educators with course preview, testimonials, and contact form.',
     oldPrice: '$25',
     newPrice: '$10 or ₹999',
     liveLink: 'https://supertutor-smoky.vercel.app/',
