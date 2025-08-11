@@ -140,121 +140,108 @@ export default function HomeClient() {
   return (
     <>      {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-50 via-indigo-50 to-white min-h-[95vh] flex items-center overflow-hidden" aria-label="Hero">
-        {/* Enhanced Background Elements */}
+        {/* Optimized Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* Primary gradient orb */}
+          {/* Simplified gradient orbs - reduced complexity */}
           <motion.div 
-            className="absolute -top-20 -left-20 w-80 h-80 bg-gradient-to-r from-blue-200 to-indigo-200 rounded-full opacity-50 blur-3xl"
+            className="absolute -top-20 -left-20 w-80 h-80 bg-gradient-to-r from-blue-200 to-indigo-200 rounded-full opacity-40 blur-3xl"
             animate={{ 
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.6, 0.3],
-              x: [0, 30, 0],
-              y: [0, -20, 0]
+              scale: [1, 1.15, 1],
+              opacity: [0.3, 0.5, 0.3]
             }}
             transition={{ 
-              duration: 12,
+              duration: 10,
               repeat: Infinity,
               ease: "easeInOut"
             }}
           />
-          {/* Secondary gradient orb */}
           <motion.div 
-            className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-l from-purple-200 to-pink-200 rounded-full opacity-40 blur-3xl"
+            className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-l from-purple-200 to-pink-200 rounded-full opacity-30 blur-3xl"
             animate={{ 
-              scale: [1, 1.3, 1],
-              opacity: [0.2, 0.5, 0.2],
-              x: [0, -40, 0],
-              y: [0, 30, 0]
+              scale: [1, 1.2, 1],
+              opacity: [0.2, 0.4, 0.2]
             }}
             transition={{ 
-              duration: 15,
+              duration: 12,
               repeat: Infinity,
               ease: "easeInOut",
               delay: 2
             }}
           />
-          {/* Tertiary accent orb */}
+          {/* Simplified accent orb */}
           <motion.div 
-            className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-to-br from-cyan-200 to-blue-300 rounded-full opacity-30 blur-2xl"
+            className="absolute top-1/3 right-1/4 w-64 h-64 bg-gradient-to-br from-cyan-200 to-blue-300 rounded-full opacity-25 blur-2xl"
             animate={{ 
-              scale: [1, 1.4, 1],
-              opacity: [0.2, 0.4, 0.2],
-              rotate: [0, 180, 360]
+              scale: [1, 1.1, 1],
+              opacity: [0.2, 0.3, 0.2]
             }}
             transition={{ 
-              duration: 20,
+              duration: 15,
               repeat: Infinity,
-              ease: "linear",
+              ease: "easeInOut",
               delay: 1
             }}
           />
         </div>
         
-        {/* Enhanced Floating Elements */}
+        {/* Simplified Floating Elements */}
         <motion.div 
-          className="absolute top-20 right-10 w-4 h-4 bg-blue-500 rounded-full opacity-70 shadow-lg"
+          className="absolute top-20 right-10 w-4 h-4 bg-blue-500 rounded-full opacity-60"
           animate={{ 
-            y: [0, -30, 0],
-            x: [0, 10, 0],
-            opacity: [0.6, 1, 0.6],
-            scale: [1, 1.2, 1]
+            y: [0, -20, 0],
+            opacity: [0.5, 0.8, 0.5]
           }}
           transition={{ 
-            duration: 4,
+            duration: 3,
             repeat: Infinity,
             ease: "easeInOut"
           }}
         />
         <motion.div 
-          className="absolute bottom-40 left-20 w-6 h-6 bg-purple-500 rounded-full opacity-60 shadow-lg"
+          className="absolute bottom-40 left-20 w-6 h-6 bg-purple-500 rounded-full opacity-50"
           animate={{ 
-            y: [0, 20, 0],
-            x: [0, -15, 0],
-            opacity: [0.5, 0.9, 0.5],
-            scale: [1, 1.3, 1]
+            y: [0, 15, 0],
+            opacity: [0.4, 0.7, 0.4]
+          }}
+          transition={{ 
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5
+          }}
+        />
+        <motion.div 
+          className="absolute top-1/2 left-10 w-3 h-3 bg-cyan-400 rounded-full opacity-60"
+          animate={{ 
+            y: [0, -15, 0],
+            opacity: [0.4, 0.7, 0.4]
           }}
           transition={{ 
             duration: 5,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 0.8
+            delay: 1
           }}
         />
         <motion.div 
-          className="absolute top-1/2 left-10 w-3 h-3 bg-cyan-400 rounded-full opacity-80"
+          className="absolute top-32 right-1/3 w-5 h-5 bg-pink-400 rounded-full opacity-40"
           animate={{ 
-            y: [0, -25, 0],
-            opacity: [0.6, 1, 0.6],
-            scale: [1, 1.5, 1]
+            y: [0, 10, 0],
+            opacity: [0.3, 0.6, 0.3]
           }}
           transition={{ 
             duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2
-          }}
-        />
-        <motion.div 
-          className="absolute top-32 right-1/3 w-5 h-5 bg-pink-400 rounded-full opacity-50"
-          animate={{ 
-            y: [0, 15, 0],
-            x: [0, 20, 0],
-            opacity: [0.4, 0.8, 0.4],
-            rotate: [0, 360]
-          }}
-          transition={{ 
-            duration: 7,
             repeat: Infinity,
             ease: "easeInOut",
             delay: 1.5
           }}
         />
         
-        {/* Animated Wave Divider */}
+        {/* Simplified Wave Divider */}
         <motion.div 
           className="absolute bottom-0 left-0 w-full"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.8 }}
         >
           <motion.svg
@@ -262,30 +249,18 @@ export default function HomeClient() {
             viewBox="0 0 1200 120"
             preserveAspectRatio="none"
             animate={{
-              y: [0, -5, 0]
+              y: [0, -3, 0]
             }}
             transition={{
-              duration: 8,
+              duration: 6,
               repeat: Infinity,
               ease: "easeInOut"
             }}
           >
-            <motion.path
+            <path
               d="M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z"
               fill="white"
               opacity="0.8"
-              animate={{
-                d: [
-                  "M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z",
-                  "M0,80 C300,40 900,100 1200,40 L1200,120 L0,120 Z",
-                  "M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z"
-                ]
-              }}
-              transition={{
-                duration: 10,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
             />
           </motion.svg>
         </motion.div>
@@ -409,34 +384,34 @@ export default function HomeClient() {
                     <motion.div 
                       className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 shadow-md"
                       animate={{ 
-                        rotate: [0, 360],
-                        scale: [1, 1.1, 1]
+                        rotate: [0, 360]
                       }}
                       transition={{
-                        rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-                        scale: { duration: 3, repeat: Infinity, ease: "easeInOut" }
+                        duration: 15,
+                        repeat: Infinity,
+                        ease: "linear"
                       }}
                     />
                     <motion.div 
                       className="w-8 h-8 rounded-full bg-gradient-to-r from-green-500 to-blue-500 shadow-md"
                       animate={{ 
-                        rotate: [360, 0],
-                        scale: [1, 1.1, 1]
+                        rotate: [360, 0]
                       }}
                       transition={{
-                        rotate: { duration: 25, repeat: Infinity, ease: "linear" },
-                        scale: { duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
+                        duration: 18,
+                        repeat: Infinity,
+                        ease: "linear"
                       }}
                     />
                     <motion.div 
                       className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 shadow-md"
                       animate={{ 
-                        rotate: [0, 360],
-                        scale: [1, 1.1, 1]
+                        rotate: [0, 360]
                       }}
                       transition={{
-                        rotate: { duration: 30, repeat: Infinity, ease: "linear" },
-                        scale: { duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }
+                        duration: 20,
+                        repeat: Infinity,
+                        ease: "linear"
                       }}
                     />
                   </div>
@@ -653,82 +628,64 @@ export default function HomeClient() {
               </motion.div>
             </motion.div>
             
-            {/* Enhanced Hero Animation */}
+            {/* Optimized Hero Animation */}
             <motion.div 
               className="w-full lg:w-1/2 mt-12 lg:mt-0"
-              initial={{ opacity: 0, x: 50, scale: 0.9 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ 
                 delay: 0.5, 
-                duration: 0.8, 
-                ease: "easeOut",
-                type: "spring",
-                stiffness: 100
+                duration: 0.6, 
+                ease: "easeOut"
               }}
             >
               <div className="relative w-full max-w-lg mx-auto">
-                {/* Enhanced Background Blobs */}
+                {/* Simplified Background Blobs - Reduced complexity */}
                 <motion.div 
-                  className="absolute top-0 -left-4 w-72 h-72 bg-gradient-to-r from-purple-200 to-pink-200 rounded-full opacity-50 mix-blend-multiply blur-2xl"
+                  className="absolute top-0 -left-4 w-72 h-72 bg-gradient-to-r from-purple-200 to-pink-200 rounded-full opacity-40 mix-blend-multiply blur-2xl"
                   animate={{ 
-                    scale: [1, 1.3, 1],
-                    rotate: [0, 180, 360],
-                    x: [0, 20, 0],
-                    y: [0, -30, 0]
+                    scale: [1, 1.1, 1],
+                    opacity: [0.3, 0.5, 0.3]
                   }} 
                   transition={{ 
-                    duration: 15,
+                    duration: 8,
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
                 />
                 <motion.div 
-                  className="absolute -bottom-10 right-4 w-72 h-72 bg-gradient-to-l from-blue-200 to-indigo-200 rounded-full opacity-40 mix-blend-multiply blur-2xl"
+                  className="absolute -bottom-10 right-4 w-72 h-72 bg-gradient-to-l from-blue-200 to-indigo-200 rounded-full opacity-30 mix-blend-multiply blur-2xl"
                   animate={{ 
-                    scale: [1, 1.4, 1],
-                    rotate: [360, 180, 0],
-                    x: [0, -30, 0],
-                    y: [0, 20, 0]
+                    scale: [1, 1.2, 1],
+                    opacity: [0.2, 0.4, 0.2]
                   }} 
                   transition={{ 
-                    duration: 20,
+                    duration: 10,
                     repeat: Infinity,
                     ease: "easeInOut",
-                    delay: 2
+                    delay: 1
                   }}
                 />
                 
-                {/* Central Interactive Element */}
+                {/* Simplified Central Element */}
                 <motion.div
-                  className="relative w-full h-96 z-0 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-3xl shadow-2xl flex items-center justify-center overflow-hidden"
+                  className="relative w-full h-96 z-0 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-3xl shadow-xl flex items-center justify-center overflow-hidden"
                   whileHover={{ 
-                    scale: 1.05,
-                    rotateY: 5,
-                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                    scale: 1.02,
+                    transition: { duration: 0.3 }
                   }}
-                  transition={{ duration: 0.4 }}
                 >
-                  {/* Animated gradient overlay - changed from white to subtle color */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-200/20 to-transparent"
-                    animate={{
-                      x: ['-100%', '100%']
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "linear"
-                    }}
-                  />
+                  {/* Simplified overlay - no complex animations */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-200/10 to-transparent opacity-50"></div>
                   
-                  {/* Content */}
+                  {/* Optimized Content */}
                   <motion.div
                     className="text-white text-center relative z-10"
                     animate={{
-                      y: [0, -10, 0]
+                      y: [0, -5, 0]
                     }}
                     transition={{
-                      duration: 4,
+                      duration: 3,
                       repeat: Infinity,
                       ease: "easeInOut"
                     }}
@@ -739,7 +696,7 @@ export default function HomeClient() {
                         rotate: [0, 360]
                       }}
                       transition={{
-                        duration: 20,
+                        duration: 15,
                         repeat: Infinity,
                         ease: "linear"
                       }}
@@ -751,38 +708,25 @@ export default function HomeClient() {
                   </motion.div>
                 </motion.div>
                 
-                {/* Enhanced Floating Cards */}
+                {/* Simplified Floating Cards - Reduced animations */}
                 <motion.div 
-                  className="absolute -top-6 -right-6 bg-white rounded-lg shadow-xl p-4 flex items-center space-x-3 border border-green-100"
+                  className="absolute -top-6 -right-6 bg-white rounded-lg shadow-lg p-4 flex items-center space-x-3 border border-green-100"
                   animate={{ 
-                    y: [0, -15, 0],
-                    rotate: [0, 5, 0],
-                    scale: [1, 1.05, 1]
+                    y: [0, -8, 0]
                   }}
                   transition={{ 
-                    duration: 5,
+                    duration: 4,
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
                   whileHover={{
-                    scale: 1.1,
-                    rotate: 0,
-                    transition: { duration: 0.3 }
+                    scale: 1.05,
+                    transition: { duration: 0.2 }
                   }}
                 >
-                  <motion.div 
-                    className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center"
-                    animate={{
-                      rotate: [0, 360]
-                    }}
-                    transition={{
-                      duration: 8,
-                      repeat: Infinity,
-                      ease: "linear"
-                    }}
-                  >
+                  <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
                     <span className="text-green-600 font-bold text-lg">✓</span>
-                  </motion.div>
+                  </div>
                   <div>
                     <span className="text-sm font-semibold text-gray-800 block">Project Delivered</span>
                     <span className="text-xs text-gray-500">On time & budget</span>
@@ -790,72 +734,55 @@ export default function HomeClient() {
                 </motion.div>
 
                 <motion.div 
-                  className="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-xl p-4 flex items-center space-x-3 border border-blue-100"
+                  className="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-lg p-4 flex items-center space-x-3 border border-blue-100"
                   animate={{ 
-                    y: [0, 12, 0],
-                    rotate: [0, -5, 0],
-                    scale: [1, 1.05, 1]
+                    y: [0, 8, 0]
                   }}
                   transition={{ 
-                    duration: 6,
+                    duration: 5,
                     repeat: Infinity,
                     ease: "easeInOut",
-                    delay: 1.5
+                    delay: 1
                   }}
                   whileHover={{
-                    scale: 1.1,
-                    rotate: 0,
-                    transition: { duration: 0.3 }
+                    scale: 1.05,
+                    transition: { duration: 0.2 }
                   }}
                 >
-                  <motion.div 
-                    className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center"
-                    animate={{
-                      scale: [1, 1.2, 1]
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  >
+                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
                     <span className="text-blue-600 font-bold text-lg">⚡</span>
-                  </motion.div>
+                  </div>
                   <div>
                     <span className="text-sm font-semibold text-gray-800 block">Fast & Reliable</span>
                     <span className="text-xs text-gray-500">Lightning speed</span>
                   </div>
                 </motion.div>
 
-                {/* Additional floating elements */}
+                {/* Simplified floating elements - Static positions with simple animations */}
                 <motion.div
-                  className="absolute top-1/3 -left-8 w-4 h-4 bg-yellow-400 rounded-full opacity-80"
+                  className="absolute top-1/3 -left-8 w-4 h-4 bg-yellow-400 rounded-full opacity-70"
                   animate={{
-                    x: [0, 20, 0],
-                    y: [0, -20, 0],
-                    scale: [1, 1.3, 1],
-                    opacity: [0.6, 1, 0.6]
+                    scale: [1, 1.2, 1],
+                    opacity: [0.5, 0.8, 0.5]
                   }}
                   transition={{
-                    duration: 7,
+                    duration: 3,
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
                 />
                 
                 <motion.div
-                  className="absolute bottom-1/3 -right-8 w-6 h-6 bg-cyan-400 rounded-full opacity-70"
+                  className="absolute bottom-1/3 -right-8 w-6 h-6 bg-cyan-400 rounded-full opacity-60"
                   animate={{
-                    x: [0, -25, 0],
-                    y: [0, 15, 0],
-                    rotate: [0, 360],
-                    scale: [1, 1.2, 1]
+                    scale: [1, 1.1, 1],
+                    opacity: [0.4, 0.7, 0.4]
                   }}
                   transition={{
-                    duration: 8,
+                    duration: 4,
                     repeat: Infinity,
                     ease: "easeInOut",
-                    delay: 2
+                    delay: 1.5
                   }}
                 />
               </div>
