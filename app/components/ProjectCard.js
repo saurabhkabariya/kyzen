@@ -28,12 +28,12 @@ export default function ProjectCard({ image, name, description, oldPrice, price,
             <span className="inline-block bg-success text-white text-xs font-semibold px-2 py-1 rounded mr-2">On Sale</span>
           )}
           {oldPrice && (
-            <span className="text-red-500 line-through text-sm" itemProp="offers" itemScope itemType="http://schema.org/Offer">
+            <span className="text-red-500 line-through text-sm">
               {oldPrice}
             </span>
           )}
           {price && (
-            <span className="text-success font-bold text-lg ml-2" itemProp="offers" itemScope itemType="http://schema.org/Offer">
+            <span className="text-success font-bold text-lg ml-2">
               {price}
             </span>
           )}
