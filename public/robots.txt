@@ -1,3 +1,83 @@
+# Robots.txt for Code Catalyst - Optimized for Maximum Traffic and SEO
+# https://codecatalystweb.vercel.app
+
+# Allow all major search engines full access
 User-agent: *
 Allow: /
-Sitemap: https://codecatalyst.com/sitemap.xml 
+
+# Block access to admin and private areas
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /uploads/
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.docx$
+Disallow: /thank-you/
+Disallow: /success/
+Disallow: /404/
+Disallow: /500/
+
+# Special crawl rate for Google (faster indexing)
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Crawl-delay: 1
+
+# Bing search engine optimization
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Crawl-delay: 2
+
+# Block AI training bots to protect content
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+# Allow social media crawlers for better sharing
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+# Allow other beneficial crawlers
+User-agent: PinterestBot
+Allow: /
+
+User-agent: redditbot
+Allow: /
+
+# Sitemap location for search engines
+Sitemap: https://codecatalystweb.vercel.app/sitemap.xml
+
+# Additional sitemaps for specific content
+Sitemap: https://codecatalystweb.vercel.app/sitemap-services.xml
+Sitemap: https://codecatalystweb.vercel.app/sitemap-portfolio.xml
+
+# Host declaration
+Host: https://codecatalystweb.vercel.app 

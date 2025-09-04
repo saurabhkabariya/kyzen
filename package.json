@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seo-audit": "node scripts/seo-audit.js",
+    "analyze": "npm run build && npm run seo-audit"
   },
   "dependencies": {
     "framer-motion": "^12.19.2",

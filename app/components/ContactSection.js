@@ -32,8 +32,8 @@ const contactMethods = [
     icon: <FaEnvelope />,
     title: "Email Support",
     subtitle: "Detailed project discussions",
-    value: "hello@codecatalyst.com",
-    action: "mailto:hello@codecatalyst.com",
+    value: "codecatalyst8@gmail.com",
+    action: "mailto:codecatalyst8@gmail.com",
     description: "Comprehensive project planning",
     available: "24/7 response within 2 hours"
   },
