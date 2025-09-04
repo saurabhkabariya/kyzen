@@ -6,6 +6,9 @@ import { FaRocket, FaLightbulb, FaShoppingCart, FaRedo, FaBug, FaTools, FaCloudU
 import { SiNextdotjs, SiExpress, SiMongodb, SiTailwindcss, SiMaterialdesign } from 'react-icons/si';
 import Link from 'next/link';
 import ProjectsSection from './components/ProjectsSection';
+import ProcessSection from './components/ProcessSection';
+import PortfolioSection from './components/PortfolioSection';
+import ContactSection from './components/ContactSection';
 
 const services = [
   {
@@ -1042,6 +1045,15 @@ export default function HomeClient() {
           </motion.div>
         </motion.div>
       </Section>
+      
+      {/* Portfolio Section */}
+      {/* <PortfolioSection /> */}
+      
+      {/* Process Section */}
+      {/* <ProcessSection /> */}
+      
+      {/* Contact Section */}
+      {/* <ContactSection /> */}
       
     </>
   );

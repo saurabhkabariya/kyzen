@@ -31,7 +31,7 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <Section className="bg-backgroundLight" aria-label="Featured Projects">
+    <Section className="bg-backgroundLight" id="projects" aria-label="Featured Projects">
       <div className="max-w-6xl mx-auto text-center mb-10">
         <h2 className="text-3xl font-bold mb-2 font-sans text-textPrimary">Featured Projects</h2>
         <p className="text-textSecondary text-lg font-sans">A glimpse of our recent work. Quality, speed, and modern design.</p>
