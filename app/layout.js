@@ -211,12 +211,7 @@ export default function RootLayout({ children }) {
         <meta name="language" content="English" />
         <meta httpEquiv="content-language" content="en-US" />
         
-        {/* Rich snippets meta tags */}
-        <meta name="rating" content="4.9" />
-        <meta name="review_count" content="156" />
-        <meta name="price_range" content="$1500-$15000" />
-        <meta name="business_type" content="Web Development Consultancy" />
-        <meta name="services" content="Web Development, SEO, Conversion Optimization" />
+        
       </head>
       <body
         className={`${inter.variable} ${poppins.variable} antialiased bg-backgroundLight text-textPrimary font-sans`}
