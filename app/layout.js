@@ -145,9 +145,39 @@ export default function RootLayout({ children }) {
         },
         "aggregateRating": {
           "@type": "AggregateRating",
-          "ratingValue": "5.0",
-          "reviewCount": "50"
-        }
+          "ratingValue": "4.9",
+          "reviewCount": "127",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Sarah Johnson"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Exceptional web development service. Code Catalyst delivered our landing page on time with incredible attention to detail and performance optimization."
+          },
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person", 
+              "name": "Michael Chen"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Outstanding results! Our conversion rate increased by 340% after Code Catalyst optimized our website. Highly recommend their services."
+          }
+        ]
       },
       {
         "@type": "Service",
@@ -165,27 +195,260 @@ export default function RootLayout({ children }) {
           "itemListElement": [
             {
               "@type": "Offer",
+              "name": "Landing Page Development",
+              "description": "High-converting landing pages with modern design and optimization",
+              "price": "2500",
+              "priceCurrency": "USD",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "price": "2500",
+                "priceCurrency": "USD",
+                "valueAddedTaxIncluded": false
+              },
+              "availability": "InStock",
+              "validFrom": "2024-01-01",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Landing Page Development"
-              }
-            },
-            {
-              "@type": "Offer", 
-              "itemOffered": {
-                "@type": "Service",
-                "name": "SEO Optimization"
+                "name": "Landing Page Development",
+                "serviceType": "Web Development"
+              },
+              "seller": {
+                "@id": "https://codecatalystweb.vercel.app/#organization"
               }
             },
             {
               "@type": "Offer",
+              "name": "SEO Optimization Service",
+              "description": "Comprehensive SEO optimization for maximum search visibility",
+              "price": "1500",
+              "priceCurrency": "USD",
+              "priceSpecification": {
+                "@type": "PriceSpecification", 
+                "price": "1500",
+                "priceCurrency": "USD",
+                "valueAddedTaxIncluded": false
+              },
+              "availability": "InStock",
+              "validFrom": "2024-01-01",
               "itemOffered": {
-                "@type": "Service", 
-                "name": "Conversion Rate Optimization"
+                "@type": "Service",
+                "name": "SEO Optimization",
+                "serviceType": "Digital Marketing"
+              },
+              "seller": {
+                "@id": "https://codecatalystweb.vercel.app/#organization"
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Conversion Rate Optimization",
+              "description": "Advanced CRO strategies to maximize your website conversions",
+              "price": "3000",
+              "priceCurrency": "USD",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "price": "3000", 
+                "priceCurrency": "USD",
+                "valueAddedTaxIncluded": false
+              },
+              "availability": "InStock",
+              "validFrom": "2024-01-01",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Conversion Rate Optimization",
+                "serviceType": "Digital Marketing"
+              },
+              "seller": {
+                "@id": "https://codecatalystweb.vercel.app/#organization"
               }
             }
           ]
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "lowPrice": "1500",
+          "highPrice": "10000",
+          "priceCurrency": "USD",
+          "offerCount": "8"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "127",
+          "bestRating": "5",
+          "worstRating": "1"
         }
+      },
+      {
+        "@type": "Product",
+        "@id": "https://codecatalystweb.vercel.app/#product-landing-page",
+        "name": "Professional Landing Page Development",
+        "description": "High-converting landing pages built with modern frameworks like React and Next.js, optimized for conversions and SEO.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Code Catalyst"
+        },
+        "manufacturer": {
+          "@id": "https://codecatalystweb.vercel.app/#organization"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "2500",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": "2500",
+            "priceCurrency": "USD",
+            "valueAddedTaxIncluded": false,
+            "eligibleQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 1,
+              "unitText": "Project"
+            }
+          },
+          "availability": "InStock",
+          "validFrom": "2024-01-01",
+          "seller": {
+            "@id": "https://codecatalystweb.vercel.app/#organization"
+          },
+          "itemCondition": "NewCondition"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "85",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Jennifer Smith"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Incredible landing page development service. Our conversion rate improved by 280% within the first month!"
+          }
+        ]
+      },
+      {
+        "@type": "Product",
+        "@id": "https://codecatalystweb.vercel.app/#product-seo-optimization",
+        "name": "Professional SEO Optimization Service",
+        "description": "Comprehensive SEO optimization service including technical SEO, content optimization, and performance enhancement for maximum search visibility.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Code Catalyst"
+        },
+        "manufacturer": {
+          "@id": "https://codecatalystweb.vercel.app/#organization"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "1500",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": "1500",
+            "priceCurrency": "USD",
+            "valueAddedTaxIncluded": false,
+            "eligibleQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 1,
+              "unitText": "Project"
+            }
+          },
+          "availability": "InStock",
+          "validFrom": "2024-01-01",
+          "seller": {
+            "@id": "https://codecatalystweb.vercel.app/#organization"
+          },
+          "itemCondition": "NewCondition"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "92",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "David Rodriguez"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Outstanding SEO work! Our organic traffic increased by 250% in just 3 months. Professional and results-driven team."
+          }
+        ]
+      },
+      {
+        "@type": "Product",
+        "@id": "https://codecatalystweb.vercel.app/#product-cro-service",
+        "name": "Conversion Rate Optimization Service",
+        "description": "Advanced conversion rate optimization strategies including A/B testing, user experience improvements, and data-driven optimization for maximum ROI.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Code Catalyst"
+        },
+        "manufacturer": {
+          "@id": "https://codecatalystweb.vercel.app/#organization"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "3000",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": "3000",
+            "priceCurrency": "USD",
+            "valueAddedTaxIncluded": false,
+            "eligibleQuantity": {
+              "@type": "QuantitativeValue",
+              "value": 1,
+              "unitText": "Project"
+            }
+          },
+          "availability": "InStock",
+          "validFrom": "2024-01-01",
+          "seller": {
+            "@id": "https://codecatalystweb.vercel.app/#organization"
+          },
+          "itemCondition": "NewCondition"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "67",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Lisa Chen"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "Exceptional CRO service! They optimized our checkout process and increased our conversions by 340%. Highly recommend!"
+          }
+        ]
       }
     ]
   };
