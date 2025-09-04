@@ -8,8 +8,7 @@ const projects = [
     name: 'PickNBuy',
     description: 'Complete e-commerce solution with React, payment integration, inventory management, and powerful admin dashboard. Perfect for launching your online store quickly with modern UI/UX.',
     oldPrice: '$199',
-    newPrice: '$119 or ₹9999',
-    price:'$119',
+    price: '$119 or ₹9999',
     liveLink: 'https://picknbuyecom.netlify.app/',
   },
   {
@@ -17,8 +16,7 @@ const projects = [
     name: 'MotiveMentor',
     description: 'Professional Motivation platform MVP featuring goal tracker, quote generator, and word game. Built with Next.js for users focusing self improvements.',
     oldPrice: '',
-    newPrice: '',
-    price:'',
+    price: '',
     liveLink: 'https://motivementor.vercel.app/',
   },
   {
@@ -26,8 +24,7 @@ const projects = [
     name: 'Supertutor',
     description: 'Conversion-optimized course selling platform for educators with course preview, testimonials, and contact form.',
     oldPrice: '$25',
-    newPrice: '$10 or ₹999',
-    price:'$10',
+    price: '$10 or ₹999',
     liveLink: 'https://supertutor-smoky.vercel.app/',
   },
 ];

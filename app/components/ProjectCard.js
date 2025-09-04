@@ -2,8 +2,8 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-export default function ProjectCard({ image, name, description, oldPrice, newPrice, liveLink }) {
-  const isOnSale = oldPrice && newPrice && oldPrice !== newPrice;
+export default function ProjectCard({ image, name, description, oldPrice, price, liveLink }) {
+  const isOnSale = oldPrice && price && oldPrice !== price;
   return (
     <motion.article
       className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col transition-transform duration-300 hover:scale-105 hover:shadow-2xl border border-gray-100"
@@ -32,9 +32,9 @@ export default function ProjectCard({ image, name, description, oldPrice, newPri
               {oldPrice}
             </span>
           )}
-          {newPrice && (
+          {price && (
             <span className="text-success font-bold text-lg ml-2" itemProp="offers" itemScope itemType="http://schema.org/Offer">
-              {newPrice}
+              {price}
             </span>
           )}
         </div>

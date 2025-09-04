@@ -7,7 +7,7 @@ const projects = [
     name: 'PickNBuy',
     description: 'Complete e-commerce solution with React, payment integration, inventory management, and powerful admin dashboard. Perfect for launching your online store quickly with modern UI/UX.',
     oldPrice: '$199',
-    newPrice: '$119 or ₹9999',
+    price: '$119 or ₹9999',
     liveLink: 'https://picknbuyecom.netlify.app/',
   },
   {
@@ -15,7 +15,7 @@ const projects = [
     name: 'MotiveMentor',
     description: 'Professional Motivation platform MVP featuring goal tracker, quote generator, and word game. Built with Next.js for users focusing self improvements.',
     oldPrice: '',
-    newPrice: '',
+    price: '',
     liveLink: 'https://motivementor.vercel.app/',
   },
   {
@@ -23,7 +23,7 @@ const projects = [
     name: 'HireLift',
     description: 'AI-powered job application SaaS with resume optimization, interview prep tools, and HR Contactlist. Helps job seekers increase interview callbacks by 3x.',
     oldPrice: '',
-    newPrice: '',
+    price: '',
     liveLink: 'https://hirelift.vercel.app/',
   },
   {
@@ -31,7 +31,7 @@ const projects = [
     name: 'SwiftTech',
     description: 'High-converting tech company landing page with modern animations, service showcases, and lead capture forms. Optimized for B2B client acquisition.',
     oldPrice: '$25',
-    newPrice: '$10 or ₹999',
+    price: '$10 or ₹999',
     liveLink: 'https://swift-tech-olive.vercel.app/',
   },
   {
@@ -39,7 +39,7 @@ const projects = [
     name: 'CodeCatalyst',
     description: 'Premium animated agency website with smooth Framer Motion transitions, portfolio showcase, and contact forms. Designed to convert visitors into clients.',
     oldPrice: '$25',
-    newPrice: '$15 or ₹1499',
+    price: '$15 or ₹1499',
     liveLink: 'https://codecatalystweb.vercel.app/',
   },
   {
@@ -47,7 +47,7 @@ const projects = [
     name: 'Supertutor',
     description: 'Conversion-optimized course selling platform for educators with course preview, testimonials, and contact form.',
     oldPrice: '$25',
-    newPrice: '$10 or ₹999',
+    price: '$10 or ₹999',
     liveLink: 'https://supertutor-smoky.vercel.app/',
   },
 ];
