@@ -7,6 +7,9 @@
     <loc>https://codecatalystweb.vercel.app/projects</loc>
   </url>
   <url>
+    <loc>https://codecatalystweb.vercel.app/about</loc>
+  </url>
+  <url>
     <loc>https://codecatalystweb.vercel.app/contact</loc>
   </url>
 </urlset> 

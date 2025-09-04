@@ -44,19 +44,6 @@ export default function robots() {
         ],
         crawlDelay: 2,
       },
-      // Block AI training bots (optional - for content protection)
-      {
-        userAgent: 'ChatGPT-User',
-        disallow: '/',
-      },
-      {
-        userAgent: 'CCBot',
-        disallow: '/',
-      },
-      {
-        userAgent: 'Claude-Web',
-        disallow: '/',
-      },
       // Allow social media crawlers for better sharing
       {
         userAgent: 'facebookexternalhit',
