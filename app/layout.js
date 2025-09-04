@@ -92,6 +92,75 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org/",
+              "@type": "Product",
+              name: "PickNBuy",
+              image: "https://codecatalystweb.vercel.app/picknbuy.webp",
+              description:
+                "Complete e-commerce solution with React, payment integration, inventory management, and powerful admin dashboard. Perfect for launching your online store quickly with modern UI/UX.",
+              offers: {
+                "@type": "Offer",
+                price: "0.00",
+                priceCurrency: "USD",
+                availability: "https://schema.org/InStock",
+                priceValidUntil: "2026-12-31",
+                url: "https://codecatalystweb.vercel.app",
+              },
+            }),
+          }}
+        />
+
+        {/* MotiveMentor */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org/",
+              "@type": "Product",
+              name: "MotiveMentor",
+              image: "https://codecatalystweb.vercel.app/motivementor.webp",
+              description:
+                "Professional Motivation platform MVP featuring goal tracker, quote generator, and word game. Built with Next.js for users focusing self improvements.",
+              offers: {
+                "@type": "Offer",
+                price: "0.00",
+                priceCurrency: "USD",
+                availability: "https://schema.org/InStock",
+                url: "https://codecatalystweb.vercel.app",
+              },
+            }),
+          }}
+        />
+
+        {/* Supertutor */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org/",
+              "@type": "Product",
+              name: "Supertutor",
+              image: "https://codecatalystweb.vercel.app/supertutor.webp",
+              description:
+                "Conversion-optimized course selling platform for educators with course preview, testimonials, and contact form.",
+              offers: {
+                "@type": "Offer",
+                price: "0.00",
+                priceCurrency: "USD",
+                availability: "https://schema.org/InStock",
+                priceValidUntil: "2026-12-31",
+                url: "https://codecatalystweb.vercel.app",
+              },
+            }),
+          }}
+        />
+
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
