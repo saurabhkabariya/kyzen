@@ -52,23 +52,6 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://codecatalystweb.vercel.app',
-    siteName: 'Code Catalyst',
-    title: 'Code Catalyst | Premium Web Development & SEO Services | 99% Client Satisfaction',
-    description: 'Transform your business with premium web solutions. Expert React/Next.js development, SEO optimization, and conversion rate optimization. 5+ years experience, 99% client satisfaction.',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Code Catalyst - Premium Web Development Consultancy with 99% Client Satisfaction',
-        type: 'image/jpeg',
-      },
-    ],
-  },
   twitter: {
     card: 'summary_large_image',
     title: 'Code Catalyst | Premium Web Development & SEO Services',
@@ -106,89 +89,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://codecatalystweb.vercel.app/#organization",
-        "name": "Code Catalyst",
-        "legalName": "Code Catalyst Web Development Consultancy",
-        "url": "https://codecatalystweb.vercel.app",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://codecatalystweb.vercel.app/logo.png",
-          "width": 300,
-          "height": 100,
-          "caption": "Code Catalyst Logo"
-        },
-        "image": "https://codecatalystweb.vercel.app/company-image.jpg",
-        "description": "Premium web development consultancy specializing in React/Next.js development, SEO optimization, and conversion rate optimization with 5+ years of experience.",
-        "email": "contact@codecatalyst.com",
-        "telephone": "+1-555-123-4567",
-        "foundingDate": "2019-01-01",
-        "numberOfEmployees": {
-          "@type": "QuantitativeValue",
-          "value": "5-10"
-        },
-        "knowsAbout": [
-          "Web Development",
-          "React Development",
-          "Next.js Development",
-          "SEO Optimization",
-          "Conversion Rate Optimization",
-          "Landing Page Design",
-          "E-commerce Development",
-          "Performance Optimization"
-        ],
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "telephone": "+1-555-123-4567",
-            "contactType": "customer service",
-            "availableLanguage": ["English"],
-            "hoursAvailable": {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-              "opens": "09:00",
-              "closes": "18:00",
-              "timeZone": "America/Los_Angeles"
-            }
-          },
-          {
-            "@type": "ContactPoint",
-            "email": "codecatalyst8@gmail.com",
-            "contactType": "sales",
-            "availableLanguage": ["English"]
-          }
-        ],
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "San Francisco",
-          "addressRegion": "CA",
-          "postalCode": "94102",
-          "addressCountry": "US",
-          "streetAddress": "123 Tech Street"
-        },
-        "sameAs": [
-          "https://github.com/saurabhkabariya/codecatalyst",
-          "https://linkedin.com/company/codecatalyst",
-          "https://twitter.com/codecatalyst",
-          "https://facebook.com/codecatalyst"
-        ],
-        "areaServed": {
-          "@type": "GeoCircle",
-          "geoMidpoint": {
-            "@type": "GeoCoordinates",
-            "latitude": 37.7749,
-            "longitude": -122.4194
-          },
-          "geoRadius": "25000"
-        }
-      }
-    ]
-  };
-
   return (
     <html lang="en" className="scroll-smooth">
       <head>
@@ -252,11 +152,6 @@ export default function RootLayout({ children }) {
       <body
         className={`${inter.variable} ${poppins.variable} antialiased bg-backgroundLight text-textPrimary font-sans`}
       >
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
         
         {/* Google Analytics */}
         <Script
