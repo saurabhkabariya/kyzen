@@ -11,7 +11,6 @@ export default function ProjectCard({ image, name, description, oldPrice, price,
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      itemScope itemType="http://schema.org/Product"
     >
       <img
         src={image}

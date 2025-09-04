@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "seo-audit": "node scripts/seo-audit.js",
-    "validate-schema": "node scripts/structured-data-validator.js",
-    "analyze": "npm run build && npm run seo-audit && npm run validate-schema"
+    "analyze": "npm run build && npm run seo-audit"
   },
   "dependencies": {
     "framer-motion": "^12.19.2",
