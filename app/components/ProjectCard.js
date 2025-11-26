@@ -22,7 +22,7 @@ export default function ProjectCard({ image, name, description, oldPrice, price,
       <div className="flex-1 flex flex-col p-6">
         <h3 className="text-xl font-bold text-textPrimary mb-2" itemProp="name">{name}</h3>
         <p className="text-textSecondary mb-4 flex-1" itemProp="description">{description}</p>
-        <div className="mb-4 flex items-center gap-3">
+        {/* <div className="mb-4 flex items-center gap-3">
           {isOnSale && (
             <span className="inline-block bg-success text-white text-xs font-semibold px-2 py-1 rounded mr-2">On Sale</span>
           )}
@@ -36,7 +36,7 @@ export default function ProjectCard({ image, name, description, oldPrice, price,
               {price}
             </span>
           )}
-        </div>
+        </div> */}
         <div className="flex flex-col sm:flex-row gap-3 mt-auto">
           {liveLink && (
             <Link href={liveLink} target="_blank" rel="noopener noreferrer" className="inline-block text-white bg-secondary hover:bg-primary font-semibold px-4 py-2 rounded-lg text-center transition-colors duration-200 w-full sm:w-auto" aria-label={`Live preview of ${name}`}>Live Preview</Link>
