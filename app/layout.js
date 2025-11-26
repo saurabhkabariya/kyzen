@@ -246,27 +246,82 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
-        {/* Core Web Vitals and Performance Monitoring */}
-        <Script id="web-vitals" strategy="lazyOnload">
+        {/* Safe Web Vitals Implementation - No external dependencies */}
+        <Script id="web-vitals-safe" strategy="afterInteractive">
           {`
-            function sendToGoogleAnalytics({name, delta, id}) {
-              if (typeof gtag !== 'undefined') {
-                gtag('event', name, {
-                  event_category: 'Web Vitals',
-                  event_label: id,
-                  value: Math.round(name === 'CLS' ? delta * 1000 : delta),
-                  non_interaction: true,
-                });
+            // Safe Web Vitals implementation without external dependencies
+            function initWebVitals() {
+              if (typeof window === 'undefined' || typeof gtag === 'undefined') {
+                return;
+              }
+
+              function sendToGoogleAnalytics({ name, delta, id }) {
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', name, {
+                    event_category: 'Web Vitals',
+                    event_label: id,
+                    value: Math.round(name === 'CLS' ? delta * 1000 : delta),
+                    non_interaction: true,
+                  });
+                }
+              }
+
+              // Use native Performance API for basic metrics
+              if ('performance' in window) {
+                try {
+                  // First Contentful Paint
+                  const paintEntries = performance.getEntriesByType('paint');
+                  const fcpEntry = paintEntries.find(entry => entry.name === 'first-contentful-paint');
+                  if (fcpEntry) {
+                    sendToGoogleAnalytics({
+                      name: 'FCP',
+                      delta: fcpEntry.startTime,
+                      id: 'fcp-' + Math.random().toString(36).substr(2, 9)
+                    });
+                  }
+
+                  // Largest Contentful Paint
+                  if ('PerformanceObserver' in window) {
+                    const lcpObserver = new PerformanceObserver((list) => {
+                      const entries = list.getEntries();
+                      if (entries.length > 0) {
+                        const lastEntry = entries[entries.length - 1];
+                        sendToGoogleAnalytics({
+                          name: 'LCP',
+                          delta: lastEntry.startTime,
+                          id: 'lcp-' + Math.random().toString(36).substr(2, 9)
+                        });
+                      }
+                    });
+                    lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+
+                    // First Input Delay
+                    const fidObserver = new PerformanceObserver((list) => {
+                      const entries = list.getEntries();
+                      entries.forEach((entry) => {
+                        const delay = entry.processingStart - entry.startTime;
+                        sendToGoogleAnalytics({
+                          name: 'FID',
+                          delta: delay,
+                          id: 'fid-' + Math.random().toString(36).substr(2, 9)
+                        });
+                      });
+                    });
+                    fidObserver.observe({ entryTypes: ['first-input'] });
+                  }
+                } catch (e) {
+                  console.log('Performance monitoring limited on this browser');
+                }
               }
             }
-            
-            if ('web-vitals' in window) {
-              const {getCLS, getFID, getFCP, getLCP, getTTFB} = window['web-vitals'];
-              getCLS(sendToGoogleAnalytics);
-              getFID(sendToGoogleAnalytics);
-              getFCP(sendToGoogleAnalytics);
-              getLCP(sendToGoogleAnalytics);
-              getTTFB(sendToGoogleAnalytics);
+
+            // Initialize when page is loaded
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', () => {
+                setTimeout(initWebVitals, 1000);
+              });
+            } else {
+              setTimeout(initWebVitals, 1000);
             }
           `}
         </Script>
