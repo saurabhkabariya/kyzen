@@ -172,12 +172,12 @@ export default function HomeClient() {
           </svg>
         </div>
         
-        <div className="container mx-auto px-4 py-6 lg:py-8 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 py-2 sm:py-4 md:py-6 lg:py-8 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12 lg:gap-16">
             {/* Hero Content */}
             <motion.div 
               ref={heroRef}
-              className="w-full lg:w-1/2 text-center lg:text-left md:ml-20"
+              className="w-full lg:w-1/2 text-center lg:text-left lg:ml-8 xl:ml-20"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ 
@@ -188,7 +188,7 @@ export default function HomeClient() {
             >
               {/* Modern Trust Badge with Glassmorphism */}
               <motion.div 
-                className="inline-flex items-center bg-gradient-to-r from-emerald-50 to-teal-50 backdrop-blur-sm border border-emerald-200/50 text-emerald-700 px-6 py-3 rounded-full text-sm font-semibold mb-6 shadow-lg shadow-emerald-100/50"
+                className="inline-flex items-center bg-gradient-to-r from-emerald-50 to-teal-50 backdrop-blur-sm border border-emerald-200/50 text-emerald-700 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-6 shadow-lg shadow-emerald-100/50"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.4 }}
@@ -201,7 +201,7 @@ export default function HomeClient() {
               </motion.div>
 
               <motion.h1 
-                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-6 text-gray-900 leading-[1.1] tracking-tight"
+                className="text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 sm:mb-6 text-gray-900 leading-[1.1] tracking-tight"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
@@ -214,7 +214,7 @@ export default function HomeClient() {
               </motion.h1>
               
               <motion.p 
-                className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+                className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed px-2 sm:px-0"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ 
@@ -228,27 +228,27 @@ export default function HomeClient() {
 
               {/* Social Proof - Optimized */}
               <motion.div 
-                className="flex items-center justify-center lg:justify-start mb-8 space-x-6"
+                className="flex flex-wrap items-center justify-center lg:justify-start mb-6 sm:mb-8 gap-3 sm:gap-6"
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.4 }}
               >
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center gap-2">
                   <div className="flex -space-x-2">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 shadow-md" />
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-green-500 to-blue-500 shadow-md" />
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 shadow-md" />
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 shadow-md" />
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-green-500 to-blue-500 shadow-md" />
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 shadow-md" />
                   </div>
-                  <span className="text-sm text-gray-600 font-medium">Trusted by 3+ clients</span>
+                  <span className="text-xs sm:text-sm text-gray-600 font-medium">Trusted by 3+ clients</span>
                 </div>
                 <div className="text-yellow-500 flex items-center">
-                  <span>⭐⭐⭐⭐⭐</span>
-                  <span className="ml-2 text-sm text-gray-600">5.0 rating</span>
+                  <span className="text-sm sm:text-base">⭐⭐⭐⭐⭐</span>
+                  <span className="ml-1.5 sm:ml-2 text-xs sm:text-sm text-gray-600">5.0 rating</span>
                 </div>
               </motion.div>
               
               <motion.div 
-                className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-5 justify-center lg:justify-start px-2 sm:px-0"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.0, duration: 0.1 }}
@@ -260,7 +260,7 @@ export default function HomeClient() {
                 >
                   <Link 
                     href="/contact" 
-                    className="group relative inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white px-10 py-4 rounded-2xl font-bold hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 text-lg w-full sm:w-auto text-center overflow-hidden"
+                    className="group relative inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white px-6 sm:px-8 md:px-10 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl font-bold hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 text-base sm:text-lg w-full sm:w-auto text-center overflow-hidden"
                   >
                     <span className="relative z-10 flex items-center gap-2">
                       {/* <span className="text-xl">🚀</span> */}
@@ -279,7 +279,7 @@ export default function HomeClient() {
                 >
                   <Link 
                     href="/projects" 
-                    className="group relative inline-flex items-center justify-center gap-2 bg-white/80 backdrop-blur-sm text-gray-800 border-2 border-gray-300 px-10 py-4 rounded-2xl font-bold hover:bg-white hover:border-purple-400 hover:text-purple-600 hover:shadow-xl transition-all duration-300 text-lg w-full sm:w-auto text-center overflow-hidden"
+                    className="group relative inline-flex items-center justify-center gap-2 bg-white/80 backdrop-blur-sm text-gray-800 border-2 border-gray-300 px-6 sm:px-8 md:px-10 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl font-bold hover:bg-white hover:border-purple-400 hover:text-purple-600 hover:shadow-xl transition-all duration-300 text-base sm:text-lg w-full sm:w-auto text-center overflow-hidden"
                   >
                     <span className="flex items-center gap-2">
                       <span className="text-xl">✨</span>
@@ -291,28 +291,28 @@ export default function HomeClient() {
 
               {/* Quick Stats - Optimized */}
               <motion.div 
-                className="grid grid-cols-3 gap-6 mt-2 pt-2 border-t border-gray-200"
+                className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6 mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-gray-200"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.2, duration: 0.5 }}
               >
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">48h</div>
-                  <div className="text-sm text-gray-600">Fast Delivery</div>
+                  <div className="text-xl sm:text-2xl font-bold text-primary">48h</div>
+                  <div className="text-xs sm:text-sm text-gray-600">Fast Delivery</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-secondary">99%</div>
-                  <div className="text-sm text-gray-600">Client Satisfaction</div>
+                  <div className="text-xl sm:text-2xl font-bold text-secondary">99%</div>
+                  <div className="text-xs sm:text-sm text-gray-600">Client Satisfaction</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-success">24/7</div>
-                  <div className="text-sm text-gray-600">Support Available</div>
+                  <div className="text-xl sm:text-2xl font-bold text-success">24/7</div>
+                  <div className="text-xs sm:text-sm text-gray-600">Support Available</div>
                 </div>
               </motion.div>
             </motion.div>
             {/* Modern Hero Visual with Glassmorphism */}
             <motion.div 
-              className="w-full lg:w-1/2 mt-12 lg:mt-0"
+              className="w-full lg:w-1/2 mt-8 sm:mt-10 md:mt-12 lg:mt-0"
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
             >
@@ -322,34 +322,34 @@ export default function HomeClient() {
                 <div className="absolute -bottom-10 right-0 w-80 h-80 bg-gradient-to-l from-blue-300 to-indigo-300 rounded-full opacity-35 mix-blend-multiply blur-3xl" />
                 
                 {/* Modern Glassmorphism Card */}
-                <div className="relative w-full h-[28rem] z-0 bg-gradient-to-br from-white/40 via-white/30 to-white/20 backdrop-blur-xl rounded-[2rem] shadow-2xl border border-white/50 flex items-center justify-center overflow-hidden">
+                <div className="relative w-full h-[22rem] sm:h-[24rem] md:h-[26rem] lg:h-[28rem] z-0 bg-gradient-to-br from-white/40 via-white/30 to-white/20 backdrop-blur-xl rounded-2xl sm:rounded-[2rem] shadow-2xl border border-white/50 flex items-center justify-center overflow-hidden">
                   {/* Animated Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20"></div>
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(255,255,255,0.1)_0%,_transparent_50%)]" />
                   
                   {/* Content */}
-                  <div className="text-center relative z-10 px-8">
+                  <div className="text-center relative z-10 px-4 sm:px-6 md:px-8">
                     <motion.div 
-                      className="text-7xl mb-6"
+                      className="text-5xl sm:text-6xl md:text-7xl mb-4 sm:mb-6"
                     >
                       🚀
                     </motion.div>
-                    <h3 className="text-3xl font-black mb-3 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">Ready to Launch?</h3>
-                    <p className="text-lg text-gray-700 font-medium">Your digital transformation starts here</p>
+                    <h3 className="text-2xl sm:text-2xl md:text-3xl font-black mb-2 sm:mb-3 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">Ready to Launch?</h3>
+                    <p className="text-base sm:text-lg text-gray-700 font-medium">Your digital transformation starts here</p>
                     
                     {/* Modern Stats Grid */}
-                    <div className="grid grid-cols-3 gap-4 mt-8">
-                      <div className="bg-white/60 backdrop-blur-sm rounded-xl p-3 border border-white/80">
-                        <div className="text-2xl font-black text-blue-600">99%</div>
-                        <div className="text-xs text-gray-600 font-semibold">Success</div>
+                    <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 mt-4 sm:mt-6 md:mt-8">
+                      <div className="bg-white/60 backdrop-blur-sm rounded-lg sm:rounded-xl p-2 sm:p-3 border border-white/80">
+                        <div className="text-lg sm:text-xl md:text-2xl font-black text-blue-600">99%</div>
+                        <div className="text-[10px] sm:text-xs text-gray-600 font-semibold">Success</div>
                       </div>
-                      <div className="bg-white/60 backdrop-blur-sm rounded-xl p-3 border border-white/80">
-                        <div className="text-2xl font-black text-purple-600">48h</div>
-                        <div className="text-xs text-gray-600 font-semibold">Delivery</div>
+                      <div className="bg-white/60 backdrop-blur-sm rounded-lg sm:rounded-xl p-2 sm:p-3 border border-white/80">
+                        <div className="text-lg sm:text-xl md:text-2xl font-black text-purple-600">48h</div>
+                        <div className="text-[10px] sm:text-xs text-gray-600 font-semibold">Delivery</div>
                       </div>
-                      <div className="bg-white/60 backdrop-blur-sm rounded-xl p-3 border border-white/80">
-                        <div className="text-2xl font-black text-pink-600">24/7</div>
-                        <div className="text-xs text-gray-600 font-semibold">Support</div>
+                      <div className="bg-white/60 backdrop-blur-sm rounded-lg sm:rounded-xl p-2 sm:p-3 border border-white/80">
+                        <div className="text-lg sm:text-xl md:text-2xl font-black text-pink-600">24/7</div>
+                        <div className="text-[10px] sm:text-xs text-gray-600 font-semibold">Support</div>
                       </div>
                     </div>
                   </div>
@@ -357,26 +357,26 @@ export default function HomeClient() {
                 
                 {/* Modern Glassmorphism Floating Cards */}
                 <motion.div 
-                  className="absolute -top-6 -right-6 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-4 flex items-center space-x-3 border border-white/60"
+                  className="hidden sm:flex absolute -top-4 sm:-top-6 -right-4 sm:-right-6 bg-white/80 backdrop-blur-md rounded-xl sm:rounded-2xl shadow-xl p-3 sm:p-4 items-center space-x-2 sm:space-x-3 border border-white/60"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center shadow-lg">
-                    <span className="text-white font-bold text-xl">✓</span>
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg">
+                    <span className="text-white font-bold text-lg sm:text-xl">✓</span>
                   </div>
                   <div>
-                    <span className="text-sm font-bold text-gray-800 block">Project Delivered</span>
-                    <span className="text-xs text-gray-600 font-medium">On time & budget</span>
+                    <span className="text-xs sm:text-sm font-bold text-gray-800 block">Project Delivered</span>
+                    <span className="text-[10px] sm:text-xs text-gray-600 font-medium">On time & budget</span>
                   </div>
                 </motion.div>
 
                 <motion.div 
-                  className="absolute -bottom-6 -left-6 bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-4 flex items-center space-x-3 border border-white/60"
+                  className="hidden sm:flex absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 bg-white/80 backdrop-blur-md rounded-xl sm:rounded-2xl shadow-xl p-3 sm:p-4 items-center space-x-2 sm:space-x-3 border border-white/60"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-xl flex items-center justify-center shadow-lg">
-                    <span className="text-white font-bold text-xl">⚡</span>
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg">
+                    <span className="text-white font-bold text-lg sm:text-xl">⚡</span>
                   </div>
                   <div>
-                    <span className="text-sm font-bold text-gray-800 block">Fast & Reliable</span>
-                    <span className="text-xs text-gray-600 font-medium">Lightning speed</span>
+                    <span className="text-xs sm:text-sm font-bold text-gray-800 block">Fast & Reliable</span>
+                    <span className="text-[10px] sm:text-xs text-gray-600 font-medium">Lightning speed</span>
                   </div>
                 </motion.div>
 
@@ -399,7 +399,7 @@ export default function HomeClient() {
         >
           <motion.div className="max-w-4xl mx-auto text-center mb-16">
             <motion.div 
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200/50 text-blue-700 px-6 py-3 rounded-full text-sm font-bold mb-6 shadow-sm"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200/50 text-blue-700 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6 shadow-sm"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -407,14 +407,14 @@ export default function HomeClient() {
               <span className="text-base">✨</span>
               What We Offer
             </motion.div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900 leading-tight">Turn Your Vision Into Reality</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 text-gray-900 leading-tight px-2 sm:px-0">Turn Your Vision Into Reality</h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
               From concept to launch, we provide end-to-end web solutions that drive results. 
               Our expert team delivers modern, scalable, and conversion-optimized websites.
             </p>
           </motion.div>
           <motion.div 
-            className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
+            className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
             variants={staggerChildrenVariant}
             initial="hidden"
             animate={servicesInView ? "visible" : "hidden"}
@@ -428,14 +428,14 @@ export default function HomeClient() {
                   scale: 1.01,
                   transition: { duration: 0.1, type: "spring", stiffness: 300 }
                 }}
-                className="group bg-white/70 backdrop-blur-sm rounded-3xl p-8 flex flex-col items-center shadow-lg hover:shadow-2xl hover:bg-white transition-all duration-300 cursor-pointer min-h-[280px] relative overflow-hidden border border-gray-200/50"
+                className="group bg-white/70 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col items-center shadow-lg hover:shadow-2xl hover:bg-white transition-all duration-300 cursor-pointer min-h-[260px] sm:min-h-[280px] relative overflow-hidden border border-gray-200/50"
               >
                 {/* Modern Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-purple-50/30 to-pink-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-blue-200 to-purple-200 rounded-full opacity-0 group-hover:opacity-20 blur-3xl transition-all duration-500"></div>
                 
                 <motion.div 
-                  className="relative z-10 mb-6 p-5 bg-gradient-to-br from-gray-50 to-white rounded-2xl group-hover:shadow-lg transition-all duration-300 border border-gray-100"
+                  className="relative z-10 mb-4 sm:mb-6 p-4 sm:p-5 bg-gradient-to-br from-gray-50 to-white rounded-xl sm:rounded-2xl group-hover:shadow-lg transition-all duration-300 border border-gray-100"
                   whileHover={{ 
                     scale: 1.01, 
                     rotate: 2,
@@ -444,8 +444,8 @@ export default function HomeClient() {
                 >
                   {service.icon}
                 </motion.div>
-                <h3 className="relative z-10 text-xl font-black mb-4 text-center text-gray-900 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">{service.title}</h3>
-                <p className="relative z-10 text-gray-600 text-center text-base leading-relaxed flex-grow font-medium">{service.desc}</p>
+                <h3 className="relative z-10 text-lg sm:text-xl font-black mb-3 sm:mb-4 text-center text-gray-900 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 px-2">{service.title}</h3>
+                <p className="relative z-10 text-gray-600 text-center text-sm sm:text-base leading-relaxed flex-grow font-medium px-2">{service.desc}</p>
                 
                 {/* Modern CTA Arrow */}
                 {/* <motion.div 
@@ -473,7 +473,7 @@ export default function HomeClient() {
             >
               <Link 
                 href="/contact" 
-                className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 via-purple-400 to-purple-600 text-white px-12 py-6 rounded-2xl font-black hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 text-xl overflow-hidden"
+                className="group relative inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-blue-500 via-purple-400 to-purple-600 text-white px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 rounded-xl sm:rounded-2xl font-black hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 text-lg sm:text-xl overflow-hidden"
               >
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   {/* <span className="text-2xl">💎</span> */}
@@ -485,7 +485,7 @@ export default function HomeClient() {
               </Link>
             </motion.div>
             <motion.p 
-              className="text-gray-600 mt-6 text-lg font-medium"
+              className="text-gray-600 mt-4 sm:mt-6 text-sm sm:text-base md:text-lg font-medium px-4 sm:px-0"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
@@ -520,7 +520,7 @@ export default function HomeClient() {
         >
           <motion.div className="max-w-4xl mx-auto text-center mb-16">
             <motion.div 
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200/50 text-indigo-700 px-6 py-3 rounded-full text-sm font-bold mb-6 shadow-sm"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200/50 text-indigo-700 px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6 shadow-sm"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -528,16 +528,16 @@ export default function HomeClient() {
               <span className="text-base">⚡</span>
               Our Tech Stack
             </motion.div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-gray-900 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 text-gray-900 leading-tight px-2 sm:px-0">
               Built With Modern Technology
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
               We use cutting-edge technologies to build fast, scalable, and future-ready applications that give your business a competitive edge.
             </p>
           </motion.div>
           
           <motion.div 
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 max-w-5xl mx-auto"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-6 max-w-5xl mx-auto"
             variants={staggerChildrenVariant}
             initial="hidden"
             animate={techInView ? "visible" : "hidden"}
@@ -547,18 +547,18 @@ export default function HomeClient() {
                 key={tech.name}
                 variants={fadeInUpVariant}
                 whileHover={{ scale: 1.01, y: -2, transition: { duration: 0.1, type: "spring", stiffness: 400 } }}
-                className="group flex flex-col items-center bg-white/80 backdrop-blur-sm rounded-3xl p-7 shadow-lg hover:shadow-2xl hover:bg-white transition-all duration-300 cursor-pointer relative overflow-hidden border border-gray-200/50"
+                className="group flex flex-col items-center bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-7 shadow-lg hover:shadow-2xl hover:bg-white transition-all duration-300 cursor-pointer relative overflow-hidden border border-gray-200/50"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-purple-50/30 to-pink-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute -top-10 -right-10 w-24 h-24 bg-gradient-to-br from-blue-300 to-purple-300 rounded-full opacity-0 group-hover:opacity-20 blur-2xl transition-all duration-500"></div>
                 
                 <motion.div 
-                  className="relative z-10 mb-5 p-4 bg-gradient-to-br from-gray-50 to-white rounded-2xl group-hover:shadow-lg transition-all duration-300 border border-gray-100"
+                  className="relative z-10 mb-3 sm:mb-4 md:mb-5 p-3 sm:p-4 bg-gradient-to-br from-gray-50 to-white rounded-xl sm:rounded-2xl group-hover:shadow-lg transition-all duration-300 border border-gray-100"
                   whileHover={{ rotate: [0, -10, 10, -10, 0], transition: { duration: 0.1 } }}
                 >
                   {tech.icon}
                 </motion.div>
-                <span className="relative z-10 text-base font-black text-gray-800 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">{tech.name}</span>
+                <span className="relative z-10 text-sm sm:text-base font-black text-gray-800 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">{tech.name}</span>
                 
                 {/* Modern Tooltip */}
                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 px-4 py-2 bg-gray-900/95 backdrop-blur-sm text-white text-xs rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none whitespace-nowrap z-50 font-medium shadow-xl">
@@ -571,7 +571,7 @@ export default function HomeClient() {
 
           {/* Modern Performance Benefits */}
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 max-w-5xl mx-auto"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mt-12 sm:mt-14 md:mt-16 max-w-5xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
@@ -580,31 +580,31 @@ export default function HomeClient() {
               className="text-center p-8 bg-white/80 backdrop-blur-md rounded-2xl border border-white/60 shadow-xl hover:shadow-2xl transition-all duration-300"
               whileHover={{ scale: 1.01, y: -1 }}
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-2xl mb-4 shadow-lg">
-                <span className="text-3xl">⚡</span>
+              <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-xl sm:rounded-2xl mb-3 sm:mb-4 shadow-lg">
+                <span className="text-2xl sm:text-3xl">⚡</span>
               </div>
-              <h3 className="text-xl font-black text-gray-900 mb-3">Lightning Fast</h3>
-              <p className="text-gray-600 font-medium">Optimized performance with 95+ PageSpeed scores</p>
+              <h3 className="text-lg sm:text-xl font-black text-gray-900 mb-2 sm:mb-3">Lightning Fast</h3>
+              <p className="text-sm sm:text-base text-gray-600 font-medium">Optimized performance with 95+ PageSpeed scores</p>
             </motion.div>
             <motion.div 
-              className="text-center p-8 bg-white/80 backdrop-blur-md rounded-2xl border border-white/60 shadow-xl hover:shadow-2xl transition-all duration-300"
+              className="text-center p-6 sm:p-7 md:p-8 bg-white/80 backdrop-blur-md rounded-xl sm:rounded-2xl border border-white/60 shadow-xl hover:shadow-2xl transition-all duration-300"
               whileHover={{ scale: 1.01, y: -1 }}
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl mb-4 shadow-lg">
-                <span className="text-3xl">🔒</span>
+              <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl sm:rounded-2xl mb-3 sm:mb-4 shadow-lg">
+                <span className="text-2xl sm:text-3xl">🔒</span>
               </div>
-              <h3 className="text-xl font-black text-gray-900 mb-3">Secure & Reliable</h3>
-              <p className="text-gray-600 font-medium">Enterprise-grade security and 99.9% uptime</p>
+              <h3 className="text-lg sm:text-xl font-black text-gray-900 mb-2 sm:mb-3">Secure & Reliable</h3>
+              <p className="text-sm sm:text-base text-gray-600 font-medium">Enterprise-grade security and 99.9% uptime</p>
             </motion.div>
             <motion.div 
-              className="text-center p-8 bg-white/80 backdrop-blur-md rounded-2xl border border-white/60 shadow-xl hover:shadow-2xl transition-all duration-300"
+              className="text-center p-6 sm:p-7 md:p-8 bg-white/80 backdrop-blur-md rounded-xl sm:rounded-2xl border border-white/60 shadow-xl hover:shadow-2xl transition-all duration-300"
               whileHover={{ scale: 1.01, y: -1 }}
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl mb-4 shadow-lg">
-                <span className="text-3xl">📱</span>
+              <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl sm:rounded-2xl mb-3 sm:mb-4 shadow-lg">
+                <span className="text-2xl sm:text-3xl">📱</span>
               </div>
-              <h3 className="text-xl font-black text-gray-900 mb-3">Mobile First</h3>
-              <p className="text-gray-600 font-medium">Responsive design that works on all devices</p>
+              <h3 className="text-lg sm:text-xl font-black text-gray-900 mb-2 sm:mb-3">Mobile First</h3>
+              <p className="text-sm sm:text-base text-gray-600 font-medium">Responsive design that works on all devices</p>
             </motion.div>
           </motion.div>
         </motion.div>
