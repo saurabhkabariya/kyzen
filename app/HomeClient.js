@@ -414,7 +414,7 @@ export default function HomeClient() {
             </p>
           </motion.div>
           <motion.div 
-            className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+            className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
             variants={staggerChildrenVariant}
             initial="hidden"
             animate={servicesInView ? "visible" : "hidden"}
