@@ -120,22 +120,9 @@ const nextConfig = {
     ];
   },
 
-  // Webpack optimization for better performance
-  webpack: (config, { dev, isServer }) => {
-    // Optimize bundle size
-    if (!dev && !isServer) {
-      config.optimization.splitChunks.chunks = 'all';
-      config.optimization.splitChunks.cacheGroups = {
-        ...config.optimization.splitChunks.cacheGroups,
-        commons: {
-          name: 'commons',
-          chunks: 'all',
-          minChunks: 2,
-        },
-      };
-    }
-
-    return config;
+  // Turbopack configuration for Next.js 16+
+  turbopack: {
+    // Empty config to silence warning - Turbopack works fine with default settings
   },
 
   // Output configuration for static export (if needed)
