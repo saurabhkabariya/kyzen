@@ -24,7 +24,7 @@ const projects = [
     description: 'AI-powered job application SaaS with resume optimization, interview prep tools, and HR Contactlist. Helps job seekers increase interview callbacks by 3x.',
     oldPrice: '',
     price: '',
-    liveLink: 'https://hirelift.vercel.app/',
+    liveLink: 'https://www.hirelift.tech/',
   },
   {
     image: '/swifttech.webp',
