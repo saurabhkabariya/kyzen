@@ -2,8 +2,8 @@
 import HomeClient from './HomeClient';
 
 export const metadata = {
-  title: 'Home | CodeCatalyst',
-  description: 'We build digital experiences that spark growth. From MVPs to scalable apps, CodeCatalyst empowers your web journey.',
+  title: 'Home | Kyzen',
+  description: 'We build digital experiences that spark growth. From MVPs to scalable apps, Kyzen empowers your web journey.',
 };
 
 export default function Page() {

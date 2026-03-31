@@ -21,10 +21,10 @@ const poppins = Poppins({
 export const metadata = {
   metadataBase: new URL('https://codecatalystweb.vercel.app'),
   title: {
-    default: 'Code Catalyst | Premium Web Development & SEO Services | 99% Client Satisfaction',
-    template: '%s | Code Catalyst - Web Development Experts'
+    default: 'Kyzen | Premium Web Development & SEO Services | 99% Client Satisfaction',
+    template: '%s | Kyzen - Web Development Experts'
   },
-  description: 'Code Catalyst: Premium web development consultancy timely delivery. Specializing in React/Next.js, landing pages, SEO optimization, and conversion rate optimization. 99% client satisfaction, fast delivery, maximum ROI guaranteed.',
+  description: 'Kyzen: Premium web development consultancy timely delivery. Specializing in React/Next.js, landing pages, SEO optimization, and conversion rate optimization. 99% client satisfaction, fast delivery, maximum ROI guaranteed.',
   keywords: [
     'web development consultancy',
     'landing page development',
@@ -42,10 +42,10 @@ export const metadata = {
     'mobile responsive design',
     'custom web applications'
   ],
-  authors: [{ name: 'Code Catalyst Team', url: 'https://codecatalystweb.vercel.app' }],
-  creator: 'Code Catalyst',
-  publisher: 'Code Catalyst',
-  applicationName: 'Code Catalyst',
+  authors: [{ name: 'Kyzen Team', url: 'https://codecatalystweb.vercel.app' }],
+  creator: 'Kyzen',
+  publisher: 'Kyzen',
+  applicationName: 'Kyzen',
   referrer: 'origin-when-cross-origin',
   formatDetection: {
     email: false,
@@ -54,9 +54,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Code Catalyst | Premium Web Development & SEO Services',
+    title: 'Kyzen | Premium Web Development & SEO Services',
     description: 'Transform your business with premium web solutions. Expert development, SEO optimization, and CRO services.',
-    creator: '@codecatalyst',
+    creator: '@kyzen',
     images: ['/twitter-image.jpg'],
   },
   robots: {

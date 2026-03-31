@@ -1,5 +1,7 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
+import Kyzen from '../../public/Kyzen.webp';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -52,7 +54,7 @@ export default function Header() {
 
   return (
     <motion.header 
-      className="bg-backgroundLight shadow sticky top-0 z-50"
+      className="bg-backgroundLight shadow sticky top-0 z-50 md: px-6"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ 
@@ -63,31 +65,41 @@ export default function Header() {
       }}
     >
       <nav className="container mx-auto flex items-center justify-between p-4">
-        {/* Styled Logo */}
-        <motion.div 
-          className="flex items-center md:ml-14" 
-          aria-label="CodeCatalyst"
-          initial={{ opacity: 0, x: -20 }}
+        <motion.div
+          className="flex items-center"
+          aria-label="Kyzen"
+          initial={{ opacity: 0, x: -16 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.25 }}
         >
-          <Link href={"/"} className="font-bold tracking-wide text-3xl sm:text-2xl" style={{ fontFamily: 'Poppins, Urbanist, sans-serif' }}>
-            <motion.span 
-              className="text-primary"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
+          <Link
+            href="/"
+            className="group inline-flex items-center gap-3 rounded-2xl border border-slate-200/70 bg-white/70 px-2.5 py-2 backdrop-blur-sm shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-indigo-200/80 hover:bg-white hover:shadow-lg"
+            aria-label="Go to homepage"
+          >
+            <motion.div>
+              <Image
+                src={Kyzen}
+                alt="Kyzen"
+                width={45}
+                height={45}
+                priority
+                className="h-10 w-auto sm:h-11"
+              />
+            </motion.div>
+
+            {/* <span className="h-8 w-px bg-gradient-to-b from-transparent via-slate-300 to-transparent" aria-hidden="true" /> */}
+
+            <motion.span
+              className="flex leading-none"
             >
-              Code
-            </motion.span>
-            <motion.span 
-              className="text-secondary"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.2 }}
-            >
-              Catalyst
+              <span className="bg-gradient-to-r from-slate-900 via-green-700 to-green-600 bg-clip-text text-xl font-extrabold tracking-[0.02em] text-transparent sm:text-2xl">
+                KYZEN
+              </span>
             </motion.span>
           </Link>
         </motion.div>
+ 
         
         {/* Desktop Nav */}
         <ul className="hidden md:flex space-x-8 text-textSecondary font-bold">

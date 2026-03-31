@@ -234,7 +234,7 @@ export default function Footer() {
         
         {/* Footer Bottom */}
         <div className="text-center text-gray-500 text-sm pt-6 border-t border-gray-800">
-          <p>&copy; {new Date().getFullYear()} CodeCatalyst. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Kyzen. All rights reserved.</p>
           <div className="flex justify-center space-x-4 mt-2 text-xs">
             <Link href="/privacy" className="hover:text-blue-400 transition-colors duration-300">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-blue-400 transition-colors duration-300">Terms of Service</Link>
