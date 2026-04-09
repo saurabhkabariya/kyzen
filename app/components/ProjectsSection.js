@@ -6,43 +6,58 @@ const projects = [
   {
     image: '/picknbuy.webp',
     name: 'PickNBuy',
-    description: 'Complete e-commerce solution with React, payment integration, inventory management, and powerful admin dashboard. Perfect for launching your online store quickly with modern UI/UX.',
-    oldPrice: '$199',
-    price: '$119 or ₹9999',
+    description: 'A modern ecommerce platform designed to improve product discovery and streamline the checkout experience with payment integration.',
     liveLink: 'https://picknbuyecom.netlify.app/',
   },
   {
     image: '/motivementor.webp',
     name: 'MotiveMentor',
-    description: 'Professional Motivation platform MVP featuring goal tracker, quote generator, and word game. Built with Next.js for users focusing self improvements.',
-    oldPrice: '',
-    price: '',
+    description: 'A focused startup MVP that helps users stay engaged with daily progress tools, designed to improve retention and return visits.',
     liveLink: 'https://motivementor.vercel.app/',
+  },
+  {
+    image: '/hirelift.webp',
+    name: 'HireLift',
+    description: 'A SaaS platform experience crafted to help job-seekers move faster from applications to interviews with a clearer conversion flow.',
+    liveLink: 'https://www.hirelift.tech/',
+  },
+  {
+    image: '/swifttech.webp',
+    name: 'SwiftTech',
+    description: 'A service-business website structured to convert visitors into qualified B2B leads through clear offers and focused calls-to-action.',
+    liveLink: 'https://swift-tech-olive.vercel.app/',
+  },
+  {
+    image: '/codecatalyst.webp',
+    name: 'CodeCatalyst',
+    description: 'An agency-style website built to strengthen brand trust, showcase work, and increase project inquiries from business clients.',
+    liveLink: 'https://codecatalystweb.vercel.app/',
   },
   {
     image: '/supertutor.webp',
     name: 'Supertutor',
-    description: 'Conversion-optimized course selling platform for educators with course preview, testimonials, and contact form.',
-    oldPrice: '$25',
-    price: '$10 or ₹999',
+    description: 'An education landing experience designed to increase course interest and drive inquiries with a cleaner decision-making path.',
     liveLink: 'https://supertutor-smoky.vercel.app/',
   },
 ];
 
 export default function ProjectsSection() {
   return (
-    <Section className="bg-backgroundLight" id="projects" aria-label="Featured Projects">
+    <Section className="bg-white" id="projects" aria-label="Portfolio and Projects">
       <div className="max-w-6xl mx-auto text-center mb-10">
-        <h2 className="text-3xl font-bold mb-2 font-sans text-textPrimary">Featured Projects</h2>
-        <p className="text-textSecondary text-lg font-sans">A glimpse of our recent work. Quality, speed, and modern design.</p>
+        <p className="text-sm font-semibold uppercase tracking-wider text-blue-700">Portfolio / Projects</p>
+        <h2 className="text-3xl sm:text-4xl font-bold mt-3 mb-3 text-slate-900">Websites built to create business outcomes</h2>
+        <p className="text-slate-600 text-lg max-w-3xl mx-auto">
+          Every project is designed to improve clarity, trust, and conversion so businesses can generate more leads and customers.
+        </p>
       </div>
-      <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center items-stretch mb-8">
         {projects.map((project) => (
           <ProjectCard key={project.name} {...project} />
         ))}
       </div>
       <div className="flex justify-center">
-        <Link href="/projects" className="inline-block bg-secondary text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary transition-colors duration-200 text-lg">View More Projects</Link>
+        <Link href="/projects" className="inline-block bg-slate-900 text-white font-semibold px-6 py-3 rounded-xl hover:bg-slate-800 transition-colors duration-200 text-lg">View Our Work</Link>
       </div>
     </Section>
   );

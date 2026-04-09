@@ -7,7 +7,8 @@ const quickLinks = [
   { href: '/', label: 'Home' },
   { href: '/#services', label: 'Services' },
   { href: '/projects', label: 'Projects' },
-  { href: '/#technology', label: 'Technology' },
+  { href: '/#why-kyzen', label: 'Why Kyzen' },
+  { href: '/#pricing', label: 'Pricing' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -74,7 +75,7 @@ export default function Footer() {
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={footerVariants}
-      className="bg-gray-900 text-gray-200 pt-16 pb-8 px-4 mt-12"
+      className="bg-gray-900 text-gray-200 pt-16 pb-8 px-4 mt-1"
     >
       <div className="max-w-6xl mx-auto">
         {/* Footer Top */}
@@ -202,8 +203,8 @@ export default function Footer() {
                 <FaEnvelope className="text-blue-400 mt-1 mr-3" />
                 <div>
                   <p className="text-white text-sm font-medium">Email</p>
-                  <a href="mailto:codecatalyst8@gmail.com" className="text-gray-400 text-sm hover:text-blue-400 transition-colors duration-300">
-                    codecatalyst8@gmail.com
+                  <a href="mailto:kyzengrowth@gmail.com" className="text-gray-400 text-sm hover:text-blue-400 transition-colors duration-300">
+                    kyzengrowth@gmail.com
                   </a>
                 </div>
               </motion.li>
@@ -212,7 +213,7 @@ export default function Footer() {
                 <FaMapMarkerAlt className="text-blue-400 mt-1 mr-3" />
                 <div>
                   <p className="text-white text-sm font-medium">Location</p>
-                  <p className="text-gray-400 text-sm">Surat, India</p>
+                  <p className="text-gray-400 text-sm">Remote</p>
                 </div>
               </motion.li>
             </ul>

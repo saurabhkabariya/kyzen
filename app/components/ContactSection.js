@@ -1,97 +1,41 @@
 'use client';
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { 
-  FaPhone, 
-  FaEnvelope, 
-  FaMapMarkerAlt, 
-  FaClock,
-  FaRocket,
-  FaLinkedin,
-  FaTwitter,
-  FaGithub,
-  FaCheckCircle,
-  FaComments,
-  FaCalendarAlt,
-  FaHeadset
-} from 'react-icons/fa';
-import { SiSkype, SiSlack, SiZoom } from 'react-icons/si';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaCheckCircle } from 'react-icons/fa';
 import Section from './Section';
 
 const contactMethods = [
   {
     icon: <FaPhone />,
-    title: "Phone Consultation",
-    subtitle: "Direct line to our experts",
-    value: "+1 (555) 123-4567",
-    action: "tel:+15551234567",
-    description: "Immediate support and consultation",
-    available: "Mon-Fri 9AM-6PM EST"
+    title: 'Phone',
+    value: '+91-7383403440',
+    action: 'tel:+917383403440',
   },
   {
     icon: <FaEnvelope />,
-    title: "Email Support",
-    subtitle: "Detailed project discussions",
-    value: "codecatalyst8@gmail.com",
-    action: "mailto:codecatalyst8@gmail.com",
-    description: "Comprehensive project planning",
-    available: "24/7 response within 2 hours"
+    title: 'Email',
+    value: 'kyzengrowth@gmail.com',
+    action: 'mailto:kyzengrowth@gmail.com',
+    note: 'Replies within 24 hours',
   },
   {
-    icon: <FaComments />,
-    title: "Live Chat",
-    subtitle: "Instant messaging support",
-    value: "Start Chat",
-    action: "#",
-    description: "Real-time assistance",
-    available: "Mon-Fri 9AM-9PM EST",
-    isChat: true
+    icon: <FaMapMarkerAlt />,
+    title: 'Location',
+    value: 'Remote projects worldwide',
+    action: '#',
   },
-  {
-    icon: <FaCalendarAlt />,
-    title: "Book Meeting",
-    subtitle: "Schedule strategy session",
-    value: "Schedule Call",
-    action: "https://calendly.com/codecatalyst",
-    description: "Free 30-min consultation",
-    available: "All time zones available"
-  }
-];
-
-const socialProfiles = [
-  { icon: <FaLinkedin />, name: "LinkedIn", url: "https://linkedin.com/company/codecatalyst", color: "hover:text-blue-600" },
-  { icon: <FaTwitter />, name: "Twitter", url: "https://twitter.com/codecatalyst", color: "hover:text-blue-400" },
-  { icon: <FaGithub />, name: "GitHub", url: "https://github.com/codecatalyst", color: "hover:text-gray-800" },
-  { icon: <SiSlack />, name: "Slack", url: "https://codecatalyst.slack.com", color: "hover:text-purple-600" }
-];
-
-const quickStats = [
-  { number: "24hr", label: "Avg Response Time", icon: <FaClock /> },
-  { number: "98%", label: "Client Satisfaction", icon: <FaCheckCircle /> },
-  { number: "50+", label: "Projects Delivered", icon: <FaRocket /> },
-  { number: "24/7", label: "Support Available", icon: <FaHeadset /> }
 ];
 
 const fadeInUpVariant = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { 
-      duration: 0.6,
-      ease: "easeOut"
-    }
-  }
-};
-
-const staggerChildrenVariant = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
+    y: 0,
     transition: {
-      staggerChildren: 0.1
-    }
-  }
+      duration: 0.45,
+      ease: 'easeOut',
+    },
+  },
 };
 
 export default function ContactSection() {
@@ -104,24 +48,22 @@ export default function ContactSection() {
     projectType: '',
     budget: '',
     timeline: '',
-    message: ''
+    message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
-  const [isChatOpen, setIsChatOpen] = useState(false);
 
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
+
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus('success');
@@ -132,94 +74,88 @@ export default function ContactSection() {
         projectType: '',
         budget: '',
         timeline: '',
-        message: ''
+        message: '',
       });
     }, 2000);
   };
 
-  const openChat = () => {
-    setIsChatOpen(true);
-    // In a real implementation, this would open your chat widget
-    console.log('Opening chat widget...');
-  };
-
   return (
-    <Section className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white" id="contact" aria-label="Contact Us">
+    <Section className="bg-white" id="contact" aria-label="Contact Us">
       <motion.div
         ref={ref}
-        variants={staggerChildrenVariant}
         initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        className="max-w-7xl mx-auto"
+        animate={isInView ? 'visible' : 'hidden'}
+        variants={fadeInUpVariant}
+        className="mx-auto max-w-6xl"
       >
-        {/* Section Header */}
-        <motion.div 
-          variants={fadeInUpVariant}
-          className="text-center mb-16"
-        >
-          <motion.div 
-            className="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full text-sm font-semibold mb-6"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-          >
-            Let's Build Something Amazing
-          </motion.div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to 
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent"> Transform</span>
-            <br />Your Business?
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Get a free consultation and discover how we can boost your online presence, 
-            increase conversions, and drive sustainable growth.
+        <div className="mx-auto mb-12 max-w-3xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-wider text-blue-700">Contact</p>
+          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Start your project with Kyzen</h2>
+          <p className="mt-4 text-lg text-slate-600">
+            Tell us about your goals and we will send a clear scope and pricing estimate.
           </p>
-        </motion.div>
+        </div>
 
-        {/* Quick Stats */}
-        <motion.div 
-          variants={fadeInUpVariant}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
-        >
-          {quickStats.map((stat, index) => (
-            <motion.div
-              key={index}
-              className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20"
-              whileHover={{ y: -5, scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="text-2xl text-purple-400 mb-3 flex justify-center">{stat.icon}</div>
-              <div className="text-2xl font-bold text-white mb-1">{stat.number}</div>
-              <div className="text-sm text-gray-300">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-5">
+          <motion.div variants={fadeInUpVariant} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 lg:col-span-2">
+            <h3 className="text-xl font-bold text-slate-900">Direct Contact</h3>
+            <p className="mt-2 text-slate-600">Pick the fastest way to reach us.</p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Contact Form */}
-          <motion.div 
-            variants={fadeInUpVariant}
-            className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20"
-          >
-            <h3 className="text-2xl font-bold mb-6 text-white">Start Your Project</h3>
-            
+            <div className="mt-6 space-y-4">
+              {contactMethods.map((method) => (
+                <div key={method.title} className="rounded-xl border border-slate-200 bg-white p-4">
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5 text-blue-700">{method.icon}</div>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-500">{method.title}</p>
+                      {method.action === '#' ? (
+                        <p className="text-base font-semibold text-slate-900">{method.value}</p>
+                      ) : (
+                        <a
+                          href={method.action}
+                          className="text-base font-semibold text-slate-900 underline-offset-2 hover:text-blue-700 hover:underline"
+                        >
+                          {method.value}
+                        </a>
+                      )}
+                      <p className="mt-1 text-sm text-slate-500">{method.note}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 rounded-xl border border-slate-200 bg-white p-4 text-sm text-slate-600">
+              <div className="flex items-center gap-2 text-slate-900">
+                <FaClock className="text-blue-700" />
+                <span className="font-semibold">Typical response time</span>
+              </div>
+              <p className="mt-2">Within 24 hours on business days.</p>
+            </div>
+          </motion.div>
+
+          <motion.div variants={fadeInUpVariant} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-3 sm:p-8">
+            <h3 className="text-2xl font-bold text-slate-900">Project Brief</h3>
+            <p className="mt-2 text-slate-600">Share a few details so we can recommend the best approach.</p>
+
             {submitStatus === 'success' && (
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-green-500/20 border border-green-500/30 rounded-xl p-4 mb-6"
+                className="mt-5 rounded-xl border border-emerald-200 bg-emerald-50 p-4"
               >
-                <div className="flex items-center space-x-2 text-green-300">
-                  <FaCheckCircle />
-                  <span className="font-semibold">Message sent successfully!</span>
+                <div className="flex items-center gap-2 text-emerald-700">
+                  <FaCheckCircle className="text-emerald-600" />
+                  <span className="font-semibold">Message sent successfully</span>
                 </div>
-                <p className="text-green-200 text-sm mt-1">We'll get back to you within 24 hours.</p>
+                <p className="mt-1 text-sm text-emerald-700">We will get back to you within 24 hours.</p>
               </motion.div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="mt-6 space-y-5">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-700">
                     Full Name *
                   </label>
                   <input
@@ -229,12 +165,13 @@ export default function ContactSection() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
-                    placeholder="John Doe"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Tony Stark"
                   />
                 </div>
+
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-700">
                     Email Address *
                   </label>
                   <input
@@ -244,14 +181,14 @@ export default function ContactSection() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
-                    placeholder="john@company.com"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="tony@company.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="company" className="mb-2 block text-sm font-medium text-slate-700">
                   Company Name
                 </label>
                 <input
@@ -260,14 +197,14 @@ export default function ContactSection() {
                   name="company"
                   value={formData.company}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                  className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="Your Company"
                 />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div>
-                  <label htmlFor="projectType" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="projectType" className="mb-2 block text-sm font-medium text-slate-700">
                     Project Type *
                   </label>
                   <select
@@ -276,18 +213,19 @@ export default function ContactSection() {
                     value={formData.projectType}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
-                    <option value="" className="bg-gray-800">Select Project Type</option>
-                    <option value="landing-page" className="bg-gray-800">Landing Page</option>
-                    <option value="web-application" className="bg-gray-800">Web Application</option>
-                    <option value="e-commerce" className="bg-gray-800">E-commerce Store</option>
-                    <option value="portfolio" className="bg-gray-800">Portfolio Website</option>
-                    <option value="other" className="bg-gray-800">Other</option>
+                    <option value="">Select Project Type</option>
+                    <option value="landing-page">Landing Page</option>
+                    <option value="web-application">Web Application</option>
+                    <option value="e-commerce">E-commerce Store</option>
+                    <option value="portfolio">Portfolio Website</option>
+                    <option value="other">Other</option>
                   </select>
                 </div>
+
                 <div>
-                  <label htmlFor="budget" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="budget" className="mb-2 block text-sm font-medium text-slate-700">
                     Budget Range
                   </label>
                   <select
@@ -295,19 +233,19 @@ export default function ContactSection() {
                     name="budget"
                     value={formData.budget}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
-                    <option value="" className="bg-gray-800">Select Budget</option>
-                    <option value="5k-10k" className="bg-gray-800">$5,000 - $10,000</option>
-                    <option value="10k-25k" className="bg-gray-800">$10,000 - $25,000</option>
-                    <option value="25k-50k" className="bg-gray-800">$25,000 - $50,000</option>
-                    <option value="50k+" className="bg-gray-800">$50,000+</option>
+                    <option value="">Select Budget</option>
+                    <option value="5k-10k">$5,000 - $10,000</option>
+                    <option value="10k-25k">$10,000 - $25,000</option>
+                    <option value="25k-50k">$25,000 - $50,000</option>
+                    <option value="50k+">$50,000+</option>
                   </select>
                 </div>
               </div>
 
               <div>
-                <label htmlFor="timeline" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="timeline" className="mb-2 block text-sm font-medium text-slate-700">
                   Project Timeline
                 </label>
                 <select
@@ -315,19 +253,19 @@ export default function ContactSection() {
                   name="timeline"
                   value={formData.timeline}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                  className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
-                  <option value="" className="bg-gray-800">Select Timeline</option>
-                  <option value="asap" className="bg-gray-800">ASAP (Rush Project)</option>
-                  <option value="1-2-months" className="bg-gray-800">1-2 Months</option>
-                  <option value="2-3-months" className="bg-gray-800">2-3 Months</option>
-                  <option value="3-6-months" className="bg-gray-800">3-6 Months</option>
-                  <option value="flexible" className="bg-gray-800">Flexible</option>
+                  <option value="">Select Timeline</option>
+                  <option value="asap">ASAP (Rush Project)</option>
+                  <option value="1-2-months">1-2 Months</option>
+                  <option value="2-3-months">2-3 Months</option>
+                  <option value="3-6-months">3-6 Months</option>
+                  <option value="flexible">Flexible</option>
                 </select>
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-700">
                   Project Details *
                 </label>
                 <textarea
@@ -337,180 +275,32 @@ export default function ContactSection() {
                   onChange={handleInputChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 resize-none"
-                  placeholder="Tell us about your project goals, target audience, and any specific requirements..."
+                  className="w-full resize-none rounded-xl border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Tell us about your project goals, target audience, and specific requirements..."
                 />
               </div>
 
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                whileHover={{ scale: 1.02 }}
+                className="w-full rounded-xl bg-slate-900 px-8 py-4 text-base font-semibold text-white transition-colors duration-200 hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
+                whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.2 }}
               >
                 {isSubmitting ? (
-                  <div className="flex items-center justify-center space-x-2">
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                    <span>Sending Message...</span>
+                  <div className="flex items-center justify-center gap-2">
+                    <div className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+                    <span>Sending...</span>
                   </div>
                 ) : (
-                  <div className="flex items-center justify-center space-x-2">
-                    <FaRocket />
-                    <span>Send Message & Get Free Quote</span>
-                  </div>
+                  <span>Send Message</span>
                 )}
               </motion.button>
             </form>
           </motion.div>
-
-          {/* Contact Methods */}
-          <motion.div 
-            variants={fadeInUpVariant}
-            className="space-y-8"
-          >
-            <div>
-              <h3 className="text-2xl font-bold mb-6 text-white">Get In Touch</h3>
-              <p className="text-gray-300 mb-8 leading-relaxed">
-                Choose your preferred way to connect with us. We're here to help you succeed 
-                and answer any questions about your project.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              {contactMethods.map((method, index) => (
-                <motion.div
-                  key={index}
-                  className="group bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300"
-                  whileHover={{ x: 5, scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="text-2xl text-purple-400 mt-1">{method.icon}</div>
-                    <div className="flex-1">
-                      <h4 className="text-lg font-semibold text-white mb-1">{method.title}</h4>
-                      <p className="text-gray-300 text-sm mb-2">{method.subtitle}</p>
-                      <motion.a
-                        href={method.isChat ? "#" : method.action}
-                        onClick={method.isChat ? (e) => { e.preventDefault(); openChat(); } : undefined}
-                        className="text-purple-400 hover:text-purple-300 font-semibold transition-colors duration-200"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        {method.value}
-                      </motion.a>
-                      <div className="mt-2 text-xs text-gray-400">
-                        <div>{method.description}</div>
-                        <div>Available: {method.available}</div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Social Profiles */}
-            <div className="pt-8 border-t border-white/20">
-              <h4 className="text-lg font-semibold text-white mb-4">Follow Us</h4>
-              <div className="flex space-x-4">
-                {socialProfiles.map((social, index) => (
-                  <motion.a
-                    key={index}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`text-2xl text-gray-400 ${social.color} transition-colors duration-200`}
-                    whileHover={{ scale: 1.2, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{ duration: 0.2 }}
-                    title={social.name}
-                  >
-                    {social.icon}
-                  </motion.a>
-                ))}
-              </div>
-            </div>
-
-            {/* Business Hours & Location */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-              <h4 className="text-lg font-semibold text-white mb-4">Business Information</h4>
-              <div className="space-y-3 text-gray-300">
-                <div className="flex items-center space-x-3">
-                  <FaMapMarkerAlt className="text-purple-400" />
-                  <span>San Francisco, CA & Remote Worldwide</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <FaClock className="text-purple-400" />
-                  <span>Mon-Fri: 9AM-6PM PST</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <FaHeadset className="text-purple-400" />
-                  <span>24/7 Emergency Support Available</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
-
-        {/* Bottom CTA */}
-        <motion.div 
-          variants={fadeInUpVariant}
-          className="text-center mt-16 pt-16 border-t border-white/20"
-        >
-          <h3 className="text-2xl font-bold text-white mb-4">Not Ready to Commit? No Problem!</h3>
-          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-            Schedule a free 30-minute consultation to discuss your project, get expert advice, 
-            and receive a custom quote with no obligations.
-          </p>
-          <motion.div
-            className="inline-block"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.2 }}
-          >
-            <a
-              href="https://calendly.com/codecatalyst"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-gray-900 px-10 py-4 rounded-2xl font-bold text-lg hover:shadow-xl transition-all duration-300 inline-block"
-            >
-              Book Free Consultation
-            </a>
-          </motion.div>
-        </motion.div>
       </motion.div>
-
-      {/* Live Chat Widget (simplified version) */}
-      {isChatOpen && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          className="fixed bottom-4 right-4 bg-white rounded-xl shadow-2xl w-80 h-96 z-50 border border-gray-200"
-        >
-          <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4 rounded-t-xl flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <FaComments />
-              <span className="font-semibold">Live Chat</span>
-            </div>
-            <button 
-              onClick={() => setIsChatOpen(false)}
-              className="text-white hover:text-gray-200 transition-colors duration-200"
-            >
-              ✕
-            </button>
-          </div>
-          <div className="p-4 h-full flex items-center justify-center text-gray-600">
-            <div className="text-center">
-              <FaComments className="text-4xl text-gray-400 mb-4 mx-auto" />
-              <p className="mb-4">Chat widget integration would go here</p>
-              <p className="text-sm text-gray-500">
-                (Tawk.to, Intercom, or custom chat solution)
-              </p>
-            </div>
-          </div>
-        </motion.div>
-      )}
     </Section>
   );
 }

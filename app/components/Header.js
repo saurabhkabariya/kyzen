@@ -7,9 +7,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/#services', label: 'Services' },
   { href: '/#projects', label: 'Projects' },
-  { href: '/#technology', label: 'Technology' },
+  { href: '/#services', label: 'Services' },
+  { href: '/#why-kyzen', label: 'Why Kyzen' },
+  { href: '/#pricing', label: 'Pricing' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -54,7 +55,7 @@ export default function Header() {
 
   return (
     <motion.header 
-      className="bg-backgroundLight shadow sticky top-0 z-50 md: px-6"
+      className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ 
@@ -64,7 +65,7 @@ export default function Header() {
         duration: 0.3
       }}
     >
-      <nav className="container mx-auto flex items-center justify-between p-4">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
         <motion.div
           className="flex items-center"
           aria-label="Kyzen"
@@ -74,7 +75,7 @@ export default function Header() {
         >
           <Link
             href="/"
-            className="group inline-flex items-center gap-3 rounded-2xl border border-slate-200/70 bg-white/70 px-2.5 py-2 backdrop-blur-sm shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-indigo-200/80 hover:bg-white hover:shadow-lg"
+            className="group inline-flex items-center gap-2 rounded-xl px-1 py-1 transition-colors duration-200"
             aria-label="Go to homepage"
           >
             <motion.div>
@@ -84,16 +85,14 @@ export default function Header() {
                 width={45}
                 height={45}
                 priority
-                className="h-10 w-auto sm:h-11"
+                className="h-10 w-auto"
               />
             </motion.div>
-
-            {/* <span className="h-8 w-px bg-gradient-to-b from-transparent via-slate-300 to-transparent" aria-hidden="true" /> */}
 
             <motion.span
               className="flex leading-none"
             >
-              <span className="bg-gradient-to-r from-slate-900 via-green-700 to-green-600 bg-clip-text text-xl font-extrabold tracking-[0.02em] text-transparent sm:text-2xl">
+              <span className="text-xl font-extrabold tracking-[0.02em] text-slate-900 sm:text-2xl">
                 KYZEN
               </span>
             </motion.span>
@@ -102,7 +101,7 @@ export default function Header() {
  
         
         {/* Desktop Nav */}
-        <ul className="hidden md:flex space-x-8 text-textSecondary font-bold">
+        <ul className="hidden items-center gap-1 md:flex">
           {navLinks.map((link, i) => (
             <motion.li 
               key={link.href}
@@ -115,7 +114,10 @@ export default function Header() {
                 whileHover={{ scale: 1.05, y: -2 }}
                 transition={{ duration: 0.2 }}
               >
-                <Link href={link.href} className="hover:text-primary transition-colors duration-300">
+                <Link
+                  href={link.href}
+                  className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition-colors duration-200 hover:bg-slate-100 hover:text-slate-900"
+                >
                   {link.label}
                 </Link>
               </motion.div>
@@ -125,15 +127,15 @@ export default function Header() {
         
         {/* Hamburger Icon */}
         <motion.button
-          className="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
+          className="flex h-10 w-10 flex-col items-center justify-center rounded-lg border border-slate-300 md:hidden"
           aria-label="Toggle menu"
           onClick={() => setMenuOpen(!menuOpen)}
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.1 }}
         >
-          <span className={`block w-6 h-0.5 bg-textPrimary mb-1 transition-transform duration-150 ${menuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-textPrimary mb-1 transition-opacity duration-150 ${menuOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-textPrimary transition-transform duration-150 ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+          <span className={`mb-1 block h-0.5 w-5 bg-slate-700 transition-transform duration-150 ${menuOpen ? 'translate-y-1.5 rotate-45' : ''}`}></span>
+          <span className={`mb-1 block h-0.5 w-5 bg-slate-700 transition-opacity duration-150 ${menuOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`block h-0.5 w-5 bg-slate-700 transition-transform duration-150 ${menuOpen ? '-translate-y-1.5 -rotate-45' : ''}`}></span>
         </motion.button>
       </nav>
       
@@ -141,7 +143,7 @@ export default function Header() {
       <AnimatePresence mode="wait">
         {menuOpen && (
           <motion.ul 
-            className="md:hidden bg-white shadow-lg absolute w-full left-0 top-full flex flex-col items-center space-y-4 py-4 z-40 overflow-hidden will-change-transform"
+            className="absolute left-0 top-full z-40 flex w-full flex-col gap-1 overflow-hidden border-b border-slate-200 bg-white px-4 py-3 shadow-md will-change-transform md:hidden"
             initial="hidden"
             animate="visible"
             exit="exit"
@@ -153,11 +155,11 @@ export default function Header() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.1, delay: i * 0.05 }}
-                className="w-full text-center"
+                className="w-full"
               >
                 <Link 
                   href={link.href} 
-                  className="text-textSecondary hover:text-primary transition-colors duration-200 block px-4 py-2 font-bold"
+                  className="block rounded-lg px-4 py-2 text-sm font-semibold text-slate-700 transition-colors duration-200 hover:bg-slate-100 hover:text-slate-900"
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.label}

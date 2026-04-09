@@ -5,56 +5,44 @@ const projects = [
   {
     image: '/picknbuy.webp',
     name: 'PickNBuy',
-    description: 'Complete e-commerce solution with React, payment integration, inventory management, and powerful admin dashboard. Perfect for launching your online store quickly with modern UI/UX.',
-    oldPrice: '$199',
-    price: '$119 or ₹9999',
+    description: 'A modern ecommerce platform designed to improve product discovery and streamline checkout with integrated payments.',
     liveLink: 'https://picknbuyecom.netlify.app/',
   },
   {
     image: '/motivementor.webp',
     name: 'MotiveMentor',
-    description: 'Professional Motivation platform MVP featuring goal tracker, quote generator, and word game. Built with Next.js for users focusing self improvements.',
-    oldPrice: '',
-    price: '',
+    description: 'A startup MVP that helps users stay engaged with consistent progress tools, built to improve retention.',
     liveLink: 'https://motivementor.vercel.app/',
   },
   {
     image: '/hirelift.webp',
     name: 'HireLift',
-    description: 'AI-powered job application SaaS with resume optimization, interview prep tools, and HR Contactlist. Helps job seekers increase interview callbacks by 3x.',
-    oldPrice: '',
-    price: '',
+    description: 'A SaaS product experience crafted to guide users from application to interview opportunities faster.',
     liveLink: 'https://www.hirelift.tech/',
   },
   {
     image: '/swifttech.webp',
     name: 'SwiftTech',
-    description: 'High-converting tech company landing page with modern animations, service showcases, and lead capture forms. Optimized for B2B client acquisition.',
-    oldPrice: '$25',
-    price: '$10 or ₹999',
+    description: 'A conversion-oriented service website built to turn B2B visitors into qualified inbound leads.',
     liveLink: 'https://swift-tech-olive.vercel.app/',
   },
   {
     image: '/codecatalyst.webp',
     name: 'CodeCatalyst',
-    description: 'Premium animated agency website with smooth Framer Motion transitions, portfolio showcase, and contact forms. Designed to convert visitors into clients.',
-    oldPrice: '$25',
-    price: '$15 or ₹1499',
+    description: 'An agency website focused on trust-building, service clarity, and improving consultation requests.',
     liveLink: 'https://codecatalystweb.vercel.app/',
   },
   {
     image: '/supertutor.webp',
     name: 'Supertutor',
-    description: 'Conversion-optimized course selling platform for educators with course preview, testimonials, and contact form.',
-    oldPrice: '$25',
-    price: '$10 or ₹999',
+    description: 'An education-focused website designed to increase course interest and drive higher-quality inquiries.',
     liveLink: 'https://supertutor-smoky.vercel.app/',
   },
 ];
 
 export const metadata = {
-  title: 'Projects | CodeCatalyst',
-  description: 'Explore our featured and custom web projects. Ecommerce, MVPs, landing pages, and more by CodeCatalyst.',
+  title: 'Projects | Kyzen',
+  description: 'Explore business-focused web projects by Kyzen, built to improve clarity, trust, and conversion.',
 };
 
 export default function ProjectsPage() {
@@ -62,7 +50,7 @@ export default function ProjectsPage() {
     <Section className="bg-backgroundLight min-h-screen" aria-label="All Projects">
       <div className="max-w-6xl mx-auto text-center mb-10">
         <h1 className="text-3xl font-bold mb-2 font-sans text-textPrimary">All Projects</h1>
-        <p className="text-textSecondary text-lg font-sans">Browse our portfolio of modern, high-quality web projects.</p>
+        <p className="text-textSecondary text-lg font-sans">A portfolio of websites built to help businesses generate leads and customers.</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center items-stretch mb-12">
         {projects.map((project) => (

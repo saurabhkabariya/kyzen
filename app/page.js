@@ -3,7 +3,7 @@ import HomeClient from './HomeClient';
 
 export const metadata = {
   title: 'Home | Kyzen',
-  description: 'We build digital experiences that spark growth. From MVPs to scalable apps, Kyzen empowers your web journey.',
+  description: 'High-converting websites for startups and businesses. Kyzen designs and builds fast, modern websites that turn visitors into customers.',
 };
 
 export default function Page() {
