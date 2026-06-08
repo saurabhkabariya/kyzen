@@ -3,6 +3,12 @@ import ProjectCard from '../components/ProjectCard';
 
 const projects = [
   {
+    image: '/solartech.webp',
+    name: 'Solartech',
+    description: 'A website customized for a solar energy company to showcase their services and drive leads.',
+    liveLink: 'https://solartech-xi.vercel.app/',
+  },
+  {
     image: '/picknbuy.webp',
     name: 'PickNBuy',
     description: 'A modern ecommerce platform designed to improve product discovery and streamline checkout with integrated payments.',
@@ -27,12 +33,6 @@ const projects = [
     liveLink: 'https://swift-tech-olive.vercel.app/',
   },
   {
-    image: '/codecatalyst.webp',
-    name: 'CodeCatalyst',
-    description: 'An agency website focused on trust-building, service clarity, and improving consultation requests.',
-    liveLink: 'https://codecatalystweb.vercel.app/',
-  },
-  {
     image: '/supertutor.webp',
     name: 'Supertutor',
     description: 'An education-focused website designed to increase course interest and drive higher-quality inquiries.',
@@ -47,19 +47,22 @@ export const metadata = {
 
 export default function ProjectsPage() {
   return (
-    <Section className="bg-backgroundLight min-h-screen" aria-label="All Projects">
+    <Section className="bg-[#05070a] min-h-screen" aria-label="All Projects">
       <div className="max-w-6xl mx-auto text-center mb-10">
-        <h1 className="text-3xl font-bold mb-2 font-sans text-textPrimary">All Projects</h1>
-        <p className="text-textSecondary text-lg font-sans">A portfolio of websites built to help businesses generate leads and customers.</p>
+        <h1 className="text-3xl font-bold mb-2 text-white">All Projects</h1>
+        <p className="text-white/70 text-lg">A portfolio of websites built to help businesses generate leads and customers.</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center items-stretch mb-12">
-        {projects.map((project) => (
-          <ProjectCard key={project.name} {...project} />
-        ))}
-      </div>
-      <div className="text-center mt-8">
-        <span className="text-textSecondary text-base font-medium">Custom websites available – priced as per requirements.</span>
+
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center items-stretch mb-12">
+          {projects.map((project) => (
+            <ProjectCard key={project.name} {...project} />
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <span className="text-white/70 text-base font-medium">Custom websites available – priced as per requirements.</span>
+        </div>
       </div>
     </Section>
   );
-} 
+}

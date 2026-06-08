@@ -4,6 +4,12 @@ import Link from 'next/link';
 
 const projects = [
   {
+    image: '/solartech.webp',
+    name: 'Solartech',
+    description: 'A website customized for a solar energy company to showcase their services and drive leads.',
+    liveLink: 'https://solartech-xi.vercel.app/',
+  },
+  {
     image: '/picknbuy.webp',
     name: 'PickNBuy',
     description: 'A modern ecommerce platform designed to improve product discovery and streamline the checkout experience with payment integration.',
@@ -26,12 +32,6 @@ const projects = [
     name: 'SwiftTech',
     description: 'A service-business website structured to convert visitors into qualified B2B leads through clear offers and focused calls-to-action.',
     liveLink: 'https://swift-tech-olive.vercel.app/',
-  },
-  {
-    image: '/codecatalyst.webp',
-    name: 'CodeCatalyst',
-    description: 'An agency-style website built to strengthen brand trust, showcase work, and increase project inquiries from business clients.',
-    liveLink: 'https://codecatalystweb.vercel.app/',
   },
   {
     image: '/supertutor.webp',

@@ -1,246 +1,95 @@
 'use client';
-import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaTwitter, FaGithub, FaInstagram } from 'react-icons/fa';
+import { FaInstagram, FaWhatsapp, FaFacebookF, FaLinkedinIn, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 
 const quickLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/#services', label: 'Services' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/#why-kyzen', label: 'Why Kyzen' },
-  { href: '/#pricing', label: 'Pricing' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  { label: 'Home', href: '/#hero' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Work', href: '/#work' },
+  { label: 'Process', href: '/#about' },
+  { label: 'About', href: '/#about' },
+  { label: 'Pricing', href: '/#pricing' },
 ];
-
-const faqLinks = [
-  { href: '/faq#cost', label: 'How much does a website cost?' },
-  { href: '/faq#timeline', label: 'How long does development take?' },
-  { href: '/faq#maintenance', label: 'Do you offer maintenance?' },
-  { href: '/faq#seo', label: 'Is SEO included?' },
-];
-
-const socialLinks = [
-  { href: 'https://linkedin.com', icon: <FaLinkedin />, label: 'LinkedIn' },
-  { href: 'https://twitter.com', icon: <FaTwitter />, label: 'Twitter' },
-  { href: 'https://github.com', icon: <FaGithub />, label: 'GitHub' },
-  { href: 'https://instagram.com', icon: <FaInstagram />, label: 'Instagram' },
-];
-
-// Animation variants
-const footerVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { 
-      duration: 0.4,
-      ease: 'easeOut',
-      when: "beforeChildren",
-      staggerChildren: 0.1
-    }
-  }
-};
-
-const childVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { 
-      type: "spring",
-      stiffness: 300,
-      damping: 24,
-      duration: 0.3
-    }
-  }
-};
-
-const linkVariants = {
-  hidden: { opacity: 0, x: -10 },
-  visible: i => ({
-    opacity: 1, 
-    x: 0,
-    transition: { 
-      delay: i * 0.05,
-      duration: 0.2
-    }
-  })
-};
+const services = ['Growth Websites', 'WhatsApp Automation', 'Instagram Funnel Setup', 'Conversion Optimization', 'SEO Foundations'];
 
 export default function Footer() {
   return (
     <motion.footer
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-      variants={footerVariants}
-      className="bg-gray-900 text-gray-200 pt-16 pb-8 px-4 mt-1"
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.35, ease: 'easeOut' }}
+      className="border-t border-white/10 bg-[#05070a] px-4 py-10 sm:px-6 lg:px-8"
+      style={{ backgroundColor: '#05070a' }}
     >
-      <div className="max-w-6xl mx-auto">
-        {/* Footer Top */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* Company Info */}
-          <motion.div 
-            variants={childVariants}
-            className="flex flex-col"
-          >
-            <motion.h3 
-              variants={childVariants}
-              className="text-xl font-bold mb-4 text-white border-b border-gray-700 pb-2"
-            >
-              CodeCatalyst
-            </motion.h3>
-            <p className="text-gray-400 mb-4 text-sm leading-relaxed">
-              We build digital experiences that spark growth. From MVPs to enterprise applications, we deliver with passion and precision.
-            </p>
-            <div className="flex space-x-4 mt-2">
-              {socialLinks.map((link, i) => (
-                <motion.a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors duration-300"
-                  whileHover={{ scale: 1.15, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  title={link.label}
-                  aria-label={link.label}
-                  variants={childVariants}
-                >
-                  <span className="text-xl">{link.icon}</span>
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
-          
-          {/* Quick Links */}
-          <motion.div variants={childVariants}>
-            <motion.h3 
-              variants={childVariants}
-              className="text-lg font-semibold mb-4 text-white border-b border-gray-700 pb-2"
-            >
-              Quick Links
-            </motion.h3>
-            <ul className="space-y-2">
-              {quickLinks.map((link, i) => (
-                <motion.li 
-                  key={link.href}
-                  custom={i}
-                  variants={linkVariants}
-                  className="flex items-center"
-                >
-                  <motion.div
-                    whileHover={{ x: 5 }}
-                    transition={{ duration: 0.2 }}
-                    className="flex items-center w-full"
-                  >
-                    <span className="mr-2 text-blue-400 text-xs">→</span>
-                    <Link 
-                      href={link.href} 
-                      className="hover:text-blue-400 transition-colors duration-300 text-gray-300"
-                    >
-                      {link.label}
-                    </Link>
-                  </motion.div>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-          
-          {/* FAQ */}
-          <motion.div variants={childVariants} className="lg:col-span-1">
-            <motion.h3 
-              variants={childVariants}
-              className="text-lg font-semibold mb-4 text-white border-b border-gray-700 pb-2"
-            >
-              FAQ
-            </motion.h3>
-            <ul className="space-y-2">
-              {faqLinks.map((link, i) => (
-                <motion.li 
-                  key={link.href}
-                  custom={i}
-                  variants={linkVariants}
-                  className="flex items-center"
-                >
-                  <motion.div
-                    whileHover={{ x: 5 }}
-                    transition={{ duration: 0.2 }}
-                    className="flex items-center w-full"
-                  >
-                    <span className="mr-2 text-blue-400 text-xs">→</span>
-                    <Link 
-                      href={link.href} 
-                      className="hover:text-blue-400 transition-colors duration-300 text-gray-300 text-sm"
-                    >
-                      {link.label}
-                    </Link>
-                  </motion.div>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-          
-          {/* Contact Info */}
-          <motion.div variants={childVariants}>
-            <motion.h3 
-              variants={childVariants}
-              className="text-lg font-semibold mb-4 text-white border-b border-gray-700 pb-2"
-            >
-              Contact Us
-            </motion.h3>
-            <ul className="space-y-3">
-              <motion.li variants={childVariants} className="flex items-start">
-                <FaPhone className="text-blue-400 mt-1 mr-3" />
-                <div>
-                  <p className="text-white text-sm font-medium">Phone</p>
-                  <p className="text-gray-400 text-sm">+91-7383403440</p>
-                </div>
-              </motion.li>
-              
-              <motion.li variants={childVariants} className="flex items-start">
-                <FaEnvelope className="text-blue-400 mt-1 mr-3" />
-                <div>
-                  <p className="text-white text-sm font-medium">Email</p>
-                  <a href="mailto:kyzengrowth@gmail.com" className="text-gray-400 text-sm hover:text-blue-400 transition-colors duration-300">
-                    kyzengrowth@gmail.com
-                  </a>
-                </div>
-              </motion.li>
-              
-              <motion.li variants={childVariants} className="flex items-start">
-                <FaMapMarkerAlt className="text-blue-400 mt-1 mr-3" />
-                <div>
-                  <p className="text-white text-sm font-medium">Location</p>
-                  <p className="text-gray-400 text-sm">Remote</p>
-                </div>
-              </motion.li>
-            </ul>
-            
-            <motion.div 
-              className="mt-6"
-              variants={childVariants}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              <Link href="/contact" 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-medium text-sm inline-flex items-center transition-all duration-300 shadow-lg hover:shadow-blue-500/20"
-              >
-                <FaEnvelope className="mr-2" /> Get in Touch
-              </Link>
-            </motion.div>
-          </motion.div>
-        </div>
-        
-        {/* Footer Bottom */}
-        <div className="text-center text-gray-500 text-sm pt-6 border-t border-gray-800">
-          <p>&copy; {new Date().getFullYear()} Kyzen. All rights reserved.</p>
-          <div className="flex justify-center space-x-4 mt-2 text-xs">
-            <Link href="/privacy" className="hover:text-blue-400 transition-colors duration-300">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-blue-400 transition-colors duration-300">Terms of Service</Link>
+      <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
+        <div>
+          <div className="flex items-center gap-3">
+            <Image src="/Kyzen.webp" alt="Kyzen" width={34} height={34} className="h-8 w-8 rounded-full object-cover" />
+            <span className="text-2xl font-bold tracking-[0.22em] text-white">KYZEN</span>
+          </div>
+          <p className="mt-4 max-w-sm text-sm leading-6 text-white/60">
+            We build growth systems that help businesses attract, convert, and retain more customers.
+          </p>
+          <div className="mt-5 flex gap-3 text-white/70">
+            <span className="grid h-8 w-8 place-items-center rounded-full border border-white/10 bg-white/5"><FaInstagram /></span>
+            <span className="grid h-8 w-8 place-items-center rounded-full border border-white/10 bg-white/5"><FaWhatsapp /></span>
+            <span className="grid h-8 w-8 place-items-center rounded-full border border-white/10 bg-white/5"><FaFacebookF /></span>
+            <span className="grid h-8 w-8 place-items-center rounded-full border border-white/10 bg-white/5"><FaLinkedinIn /></span>
           </div>
         </div>
+
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/80">Quick Links</h3>
+          <ul className="mt-4 space-y-2 text-sm text-white/60">
+            {quickLinks.map((item) => (
+              <li key={item.label}>
+                <a href={item.href} className="transition-colors hover:text-lime-400">
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/80">Services</h3>
+          <ul className="mt-4 space-y-2 text-sm text-white/60">
+            {services.map((item) => (
+              <li key={item}>
+                <a href="#services" className="transition-colors hover:text-lime-400">
+                  {item}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/80">Let&apos;s grow your business</h3>
+          <p className="mt-4 text-sm leading-6 text-white/60">
+            Ready to get more leads and sales? Let&apos;s build your growth system.
+          </p>
+          <button
+            type="button"
+            onClick={() => window.open(`https://wa.me/917383403440?text=${encodeURIComponent("Hi! I'm interested in your web development services. Can you help me?")}`, '_blank', 'noopener,noreferrer')}
+            className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-md bg-lime-400 px-5 py-3 text-sm font-semibold text-black transition-transform hover:-translate-y-0.5 hover:bg-lime-300"
+            aria-label="Contact us on WhatsApp"
+          >
+            <FaWhatsapp /> Get Free Audit
+          </button>
+          <div className="mt-4 space-y-2 text-sm text-white/65">
+            <div className="flex items-center gap-2"><FaPhone className="text-lime-400" /> +91-7383403440</div>
+            <div className="flex items-center gap-2"><FaEnvelope className="text-lime-400" /> kyzengrowth@gmail.com</div>
+            <div className="flex items-center gap-2"><FaMapMarkerAlt className="text-lime-400" /> Surat, India</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mx-auto mt-8 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
+        <p>© 2024 Kyzen. All rights reserved.</p>
+        <p>Built for businesses that want more leads, more sales, and more growth.</p>
       </div>
     </motion.footer>
   );

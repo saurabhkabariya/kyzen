@@ -1,39 +1,95 @@
 'use client';
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaCheckCircle } from 'react-icons/fa';
+import {
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaClock,
+  FaRocket,
+  FaLinkedin,
+  FaTwitter,
+  FaGithub,
+  FaCheckCircle,
+  FaComments,
+  FaCalendarAlt,
+  FaHeadset,
+} from 'react-icons/fa';
+import { SiSlack } from 'react-icons/si';
 import Section from './Section';
 
 const contactMethods = [
   {
     icon: <FaPhone />,
-    title: 'Phone',
+    title: 'Phone Consultation',
+    subtitle: 'Direct line to our experts',
     value: '+91-7383403440',
     action: 'tel:+917383403440',
+    description: 'Immediate support and consultation',
+    available: 'Mon-Fri 9AM-6PM IST',
   },
   {
     icon: <FaEnvelope />,
-    title: 'Email',
+    title: 'Email Support',
+    subtitle: 'Detailed project discussions',
     value: 'kyzengrowth@gmail.com',
     action: 'mailto:kyzengrowth@gmail.com',
-    note: 'Replies within 24 hours',
+    description: 'Comprehensive project planning',
+    available: 'Replies within 24 hours',
   },
   {
-    icon: <FaMapMarkerAlt />,
-    title: 'Location',
-    value: 'Remote projects worldwide',
+    icon: <FaComments />,
+    title: 'Live Chat',
+    subtitle: 'Instant messaging support',
+    value: 'Start Chat',
     action: '#',
+    description: 'Real-time assistance',
+    available: 'Mon-Fri 9AM-9PM IST',
+    isChat: true,
+  },
+  {
+    icon: <FaCalendarAlt />,
+    title: 'Book Meeting',
+    subtitle: 'Schedule strategy session',
+    value: 'Schedule Call',
+    action: '#audit',
+    description: 'Free strategy consultation',
+    available: 'All time zones available',
   },
 ];
 
+const socialProfiles = [
+  { icon: <FaLinkedin />, name: 'LinkedIn', url: '#', color: 'hover:text-blue-400' },
+  { icon: <FaTwitter />, name: 'Twitter', url: '#', color: 'hover:text-sky-400' },
+  { icon: <FaGithub />, name: 'GitHub', url: '#', color: 'hover:text-white' },
+  { icon: <SiSlack />, name: 'Slack', url: '#', color: 'hover:text-purple-400' },
+];
+
+const quickStats = [
+  { number: '24hr', label: 'Avg Response Time', icon: <FaClock /> },
+  { number: '98%', label: 'Client Satisfaction', icon: <FaCheckCircle /> },
+  { number: '50+', label: 'Projects Delivered', icon: <FaRocket /> },
+  { number: '24/7', label: 'Support Available', icon: <FaHeadset /> },
+];
+
 const fadeInUpVariant = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.45,
+      duration: 0.6,
       ease: 'easeOut',
+    },
+  },
+};
+
+const staggerChildrenVariant = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
     },
   },
 };
@@ -52,6 +108,7 @@ export default function ContactSection() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('');
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -79,83 +136,77 @@ export default function ContactSection() {
     }, 2000);
   };
 
+  const openChat = () => {
+    setIsChatOpen(true);
+  };
+
   return (
-    <Section className="bg-white" id="contact" aria-label="Contact Us">
+    <Section className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white" id="contact" aria-label="Contact Us">
       <motion.div
         ref={ref}
+        variants={staggerChildrenVariant}
         initial="hidden"
         animate={isInView ? 'visible' : 'hidden'}
-        variants={fadeInUpVariant}
-        className="mx-auto max-w-6xl"
+        className="mx-auto max-w-7xl"
       >
-        <div className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-blue-700">Contact</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Start your project with Kyzen</h2>
-          <p className="mt-4 text-lg text-slate-600">
-            Tell us about your goals and we will send a clear scope and pricing estimate.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-5">
-          <motion.div variants={fadeInUpVariant} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 lg:col-span-2">
-            <h3 className="text-xl font-bold text-slate-900">Direct Contact</h3>
-            <p className="mt-2 text-slate-600">Pick the fastest way to reach us.</p>
-
-            <div className="mt-6 space-y-4">
-              {contactMethods.map((method) => (
-                <div key={method.title} className="rounded-xl border border-slate-200 bg-white p-4">
-                  <div className="flex items-start gap-3">
-                    <div className="mt-0.5 text-blue-700">{method.icon}</div>
-                    <div>
-                      <p className="text-sm font-semibold text-slate-500">{method.title}</p>
-                      {method.action === '#' ? (
-                        <p className="text-base font-semibold text-slate-900">{method.value}</p>
-                      ) : (
-                        <a
-                          href={method.action}
-                          className="text-base font-semibold text-slate-900 underline-offset-2 hover:text-blue-700 hover:underline"
-                        >
-                          {method.value}
-                        </a>
-                      )}
-                      <p className="mt-1 text-sm text-slate-500">{method.note}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-6 rounded-xl border border-slate-200 bg-white p-4 text-sm text-slate-600">
-              <div className="flex items-center gap-2 text-slate-900">
-                <FaClock className="text-blue-700" />
-                <span className="font-semibold">Typical response time</span>
-              </div>
-              <p className="mt-2">Within 24 hours on business days.</p>
-            </div>
+        <motion.div variants={fadeInUpVariant} className="mb-16 text-center">
+          <motion.div
+            className="mb-6 inline-block rounded-full bg-gradient-to-r from-lime-400 to-emerald-400 px-6 py-3 text-sm font-semibold text-black"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
+            Let&apos;s Build Something Amazing
           </motion.div>
+          <h2 className="mb-6 text-4xl font-bold md:text-5xl">
+            Ready to <span className="bg-gradient-to-r from-lime-300 via-emerald-300 to-cyan-300 bg-clip-text text-transparent">Transform</span>
+            <br />Your Business?
+          </h2>
+          <p className="mx-auto max-w-3xl text-xl leading-relaxed text-white/75">
+            Get a free consultation and discover how we can boost your online presence,
+            increase conversions, and drive sustainable growth.
+          </p>
+        </motion.div>
 
-          <motion.div variants={fadeInUpVariant} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-3 sm:p-8">
-            <h3 className="text-2xl font-bold text-slate-900">Project Brief</h3>
-            <p className="mt-2 text-slate-600">Share a few details so we can recommend the best approach.</p>
+        <motion.div variants={fadeInUpVariant} className="mb-16 grid grid-cols-2 gap-6 md:grid-cols-4">
+          {quickStats.map((stat) => (
+            <motion.div
+              key={stat.label}
+              className="rounded-xl border border-white/10 bg-white/10 p-6 text-center backdrop-blur-sm"
+              whileHover={{ y: -5, scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="mb-3 flex justify-center text-2xl text-lime-300">{stat.icon}</div>
+              <div className="mb-1 text-2xl font-bold text-white">{stat.number}</div>
+              <div className="text-sm text-white/70">{stat.label}</div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
+          <motion.div
+            variants={fadeInUpVariant}
+            className="rounded-2xl border border-white/10 bg-white/10 p-8 backdrop-blur-sm"
+          >
+            <h3 className="mb-6 text-2xl font-bold text-white">Start Your Project</h3>
 
             {submitStatus === 'success' && (
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mt-5 rounded-xl border border-emerald-200 bg-emerald-50 p-4"
+                className="mb-6 rounded-xl border border-emerald-500/30 bg-emerald-500/15 p-4"
               >
-                <div className="flex items-center gap-2 text-emerald-700">
-                  <FaCheckCircle className="text-emerald-600" />
-                  <span className="font-semibold">Message sent successfully</span>
+                <div className="flex items-center gap-2 text-emerald-300">
+                  <FaCheckCircle />
+                  <span className="font-semibold">Message sent successfully!</span>
                 </div>
-                <p className="mt-1 text-sm text-emerald-700">We will get back to you within 24 hours.</p>
+                <p className="mt-1 text-sm text-emerald-200">We&apos;ll get back to you within 24 hours.</p>
               </motion.div>
             )}
 
-            <form onSubmit={handleSubmit} className="mt-6 space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div>
-                  <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-700">
+                  <label htmlFor="name" className="mb-2 block text-sm font-medium text-white/70">
                     Full Name *
                   </label>
                   <input
@@ -165,13 +216,12 @@ export default function ContactSection() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Tony Stark"
+                    className="w-full rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-white/40 focus:border-lime-400 focus:outline-none focus:ring-2 focus:ring-lime-400/40"
+                    placeholder="John Doe"
                   />
                 </div>
-
                 <div>
-                  <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-700">
+                  <label htmlFor="email" className="mb-2 block text-sm font-medium text-white/70">
                     Email Address *
                   </label>
                   <input
@@ -181,14 +231,14 @@ export default function ContactSection() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="tony@company.com"
+                    className="w-full rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-white/40 focus:border-lime-400 focus:outline-none focus:ring-2 focus:ring-lime-400/40"
+                    placeholder="john@company.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="company" className="mb-2 block text-sm font-medium text-slate-700">
+                <label htmlFor="company" className="mb-2 block text-sm font-medium text-white/70">
                   Company Name
                 </label>
                 <input
@@ -197,14 +247,14 @@ export default function ContactSection() {
                   name="company"
                   value={formData.company}
                   onChange={handleInputChange}
-                  className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-white/40 focus:border-lime-400 focus:outline-none focus:ring-2 focus:ring-lime-400/40"
                   placeholder="Your Company"
                 />
               </div>
 
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div>
-                  <label htmlFor="projectType" className="mb-2 block text-sm font-medium text-slate-700">
+                  <label htmlFor="projectType" className="mb-2 block text-sm font-medium text-white/70">
                     Project Type *
                   </label>
                   <select
@@ -213,19 +263,30 @@ export default function ContactSection() {
                     value={formData.projectType}
                     onChange={handleInputChange}
                     required
-                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-white focus:border-lime-400 focus:outline-none focus:ring-2 focus:ring-lime-400/40"
                   >
-                    <option value="">Select Project Type</option>
-                    <option value="landing-page">Landing Page</option>
-                    <option value="web-application">Web Application</option>
-                    <option value="e-commerce">E-commerce Store</option>
-                    <option value="portfolio">Portfolio Website</option>
-                    <option value="other">Other</option>
+                    <option value="" className="bg-slate-900">
+                      Select Project Type
+                    </option>
+                    <option value="landing-page" className="bg-slate-900">
+                      Landing Page
+                    </option>
+                    <option value="web-application" className="bg-slate-900">
+                      Web Application
+                    </option>
+                    <option value="e-commerce" className="bg-slate-900">
+                      E-commerce Store
+                    </option>
+                    <option value="portfolio" className="bg-slate-900">
+                      Portfolio Website
+                    </option>
+                    <option value="other" className="bg-slate-900">
+                      Other
+                    </option>
                   </select>
                 </div>
-
                 <div>
-                  <label htmlFor="budget" className="mb-2 block text-sm font-medium text-slate-700">
+                  <label htmlFor="budget" className="mb-2 block text-sm font-medium text-white/70">
                     Budget Range
                   </label>
                   <select
@@ -233,19 +294,29 @@ export default function ContactSection() {
                     name="budget"
                     value={formData.budget}
                     onChange={handleInputChange}
-                    className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-white focus:border-lime-400 focus:outline-none focus:ring-2 focus:ring-lime-400/40"
                   >
-                    <option value="">Select Budget</option>
-                    <option value="5k-10k">$5,000 - $10,000</option>
-                    <option value="10k-25k">$10,000 - $25,000</option>
-                    <option value="25k-50k">$25,000 - $50,000</option>
-                    <option value="50k+">$50,000+</option>
+                    <option value="" className="bg-slate-900">
+                      Select Budget
+                    </option>
+                    <option value="5k-10k" className="bg-slate-900">
+                      $5,000 - $10,000
+                    </option>
+                    <option value="10k-25k" className="bg-slate-900">
+                      $10,000 - $25,000
+                    </option>
+                    <option value="25k-50k" className="bg-slate-900">
+                      $25,000 - $50,000
+                    </option>
+                    <option value="50k+" className="bg-slate-900">
+                      $50,000+
+                    </option>
                   </select>
                 </div>
               </div>
 
               <div>
-                <label htmlFor="timeline" className="mb-2 block text-sm font-medium text-slate-700">
+                <label htmlFor="timeline" className="mb-2 block text-sm font-medium text-white/70">
                   Project Timeline
                 </label>
                 <select
@@ -253,19 +324,31 @@ export default function ContactSection() {
                   name="timeline"
                   value={formData.timeline}
                   onChange={handleInputChange}
-                  className="w-full rounded-xl border border-slate-300 px-4 py-3 text-slate-900 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-white focus:border-lime-400 focus:outline-none focus:ring-2 focus:ring-lime-400/40"
                 >
-                  <option value="">Select Timeline</option>
-                  <option value="asap">ASAP (Rush Project)</option>
-                  <option value="1-2-months">1-2 Months</option>
-                  <option value="2-3-months">2-3 Months</option>
-                  <option value="3-6-months">3-6 Months</option>
-                  <option value="flexible">Flexible</option>
+                  <option value="" className="bg-slate-900">
+                    Select Timeline
+                  </option>
+                  <option value="asap" className="bg-slate-900">
+                    ASAP (Rush Project)
+                  </option>
+                  <option value="1-2-months" className="bg-slate-900">
+                    1-2 Months
+                  </option>
+                  <option value="2-3-months" className="bg-slate-900">
+                    2-3 Months
+                  </option>
+                  <option value="3-6-months" className="bg-slate-900">
+                    3-6 Months
+                  </option>
+                  <option value="flexible" className="bg-slate-900">
+                    Flexible
+                  </option>
                 </select>
               </div>
 
               <div>
-                <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-700">
+                <label htmlFor="message" className="mb-2 block text-sm font-medium text-white/70">
                   Project Details *
                 </label>
                 <textarea
@@ -275,32 +358,166 @@ export default function ContactSection() {
                   onChange={handleInputChange}
                   required
                   rows={5}
-                  className="w-full resize-none rounded-xl border border-slate-300 px-4 py-3 text-slate-900 placeholder-slate-400 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Tell us about your project goals, target audience, and specific requirements..."
+                  className="w-full resize-none rounded-xl border border-white/10 bg-white/10 px-4 py-3 text-white placeholder:text-white/40 focus:border-lime-400 focus:outline-none focus:ring-2 focus:ring-lime-400/40"
+                  placeholder="Tell us about your project goals, target audience, and any specific requirements..."
                 />
               </div>
 
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full rounded-xl bg-slate-900 px-8 py-4 text-base font-semibold text-white transition-colors duration-200 hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
-                whileHover={{ scale: 1.01 }}
+                className="w-full rounded-xl bg-gradient-to-r from-lime-400 to-emerald-400 px-8 py-4 text-lg font-bold text-black transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-50"
+                whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.2 }}
               >
                 {isSubmitting ? (
                   <div className="flex items-center justify-center gap-2">
-                    <div className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
-                    <span>Sending...</span>
+                    <div className="h-5 w-5 animate-spin rounded-full border-2 border-black/20 border-t-black" />
+                    <span>Sending Message...</span>
                   </div>
                 ) : (
-                  <span>Send Message</span>
+                  <div className="flex items-center justify-center gap-2">
+                    <FaRocket />
+                    <span>Send Message &amp; Get Free Quote</span>
+                  </div>
                 )}
               </motion.button>
             </form>
           </motion.div>
+
+          <motion.div variants={fadeInUpVariant} className="space-y-8">
+            <div>
+              <h3 className="mb-6 text-2xl font-bold text-white">Get In Touch</h3>
+              <p className="mb-8 leading-relaxed text-white/75">
+                Choose your preferred way to connect with us. We&apos;re here to help you succeed
+                and answer any questions about your project.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {contactMethods.map((method, index) => (
+                <motion.div
+                  key={index}
+                  className="group rounded-xl border border-white/10 bg-white/10 p-6 backdrop-blur-sm transition-all duration-300 hover:bg-white/15"
+                  whileHover={{ x: 5, scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="mt-1 text-2xl text-lime-300">{method.icon}</div>
+                    <div className="flex-1">
+                      <h4 className="mb-1 text-lg font-semibold text-white">{method.title}</h4>
+                      <p className="mb-2 text-sm text-white/70">{method.subtitle}</p>
+                      <motion.a
+                        href={method.isChat ? '#' : method.action}
+                        onClick={method.isChat ? (e) => { e.preventDefault(); openChat(); } : undefined}
+                        className="font-semibold text-lime-300 transition-colors duration-200 hover:text-lime-200"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {method.value}
+                      </motion.a>
+                      <div className="mt-2 text-xs text-white/50">
+                        <div>{method.description}</div>
+                        <div>Available: {method.available}</div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="rounded-xl border border-white/10 bg-white/10 p-6 backdrop-blur-sm">
+              <h4 className="mb-4 text-lg font-semibold text-white">Business Information</h4>
+              <div className="space-y-3 text-white/75">
+                <div className="flex items-center gap-3">
+                  <FaMapMarkerAlt className="text-lime-300" />
+                  <span>Remote projects worldwide</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <FaClock className="text-lime-300" />
+                  <span>Mon-Fri: 9AM-6PM IST</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <FaHeadset className="text-lime-300" />
+                  <span>Fast support for active clients</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-8 border-t border-white/10">
+              <h4 className="mb-4 text-lg font-semibold text-white">Follow Us</h4>
+              <div className="flex gap-4">
+                {socialProfiles.map((social, index) => (
+                  <motion.a
+                    key={index}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-2xl text-white/50 ${social.color} transition-colors duration-200`}
+                    whileHover={{ scale: 1.2, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                    title={social.name}
+                  >
+                    {social.icon}
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
+
+        <motion.div variants={fadeInUpVariant} className="mt-16 border-t border-white/10 pt-16 text-center">
+          <h3 className="mb-4 text-2xl font-bold text-white">Not Ready to Commit? No Problem!</h3>
+          <p className="mx-auto mb-8 max-w-2xl text-white/75">
+            Schedule a free 30-minute consultation to discuss your project, get expert advice,
+            and receive a custom quote with no obligations.
+          </p>
+          <motion.div
+            className="inline-block"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.2 }}
+          >
+            <a
+              href="#audit"
+              className="inline-block rounded-2xl bg-white px-10 py-4 text-lg font-bold text-gray-900 transition-all duration-300 hover:shadow-xl"
+            >
+              Book Free Consultation
+            </a>
+          </motion.div>
+        </motion.div>
       </motion.div>
+
+      {isChatOpen && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          className="fixed bottom-4 right-4 z-50 h-96 w-80 rounded-xl border border-white/10 bg-white shadow-2xl"
+        >
+          <div className="flex items-center justify-between rounded-t-xl bg-gradient-to-r from-lime-400 to-emerald-400 p-4 text-black">
+            <div className="flex items-center gap-2 font-semibold">
+              <FaComments />
+              <span>Live Chat</span>
+            </div>
+            <button
+              onClick={() => setIsChatOpen(false)}
+              className="text-black transition-colors duration-200 hover:text-black/70"
+              aria-label="Close chat widget"
+            >
+              ×
+            </button>
+          </div>
+          <div className="flex h-full items-center justify-center p-4 text-gray-600">
+            <div className="text-center">
+              <FaComments className="mx-auto mb-4 text-4xl text-gray-400" />
+              <p className="mb-4">Chat widget integration would go here</p>
+              <p className="text-sm text-gray-500">(Tawk.to, Intercom, or custom chat solution)</p>
+            </div>
+          </div>
+        </motion.div>
+      )}
     </Section>
   );
 }
