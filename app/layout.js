@@ -98,6 +98,18 @@ export default function RootLayout({ children }) {
             }),
           }}
         />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-DYT5ZGF2WC"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-DYT5ZGF2WC');
+          `}
+        </Script>
       </head>
       <body
         className={`${inter.variable} ${poppins.variable} bg-[#05070a] text-white antialiased`}
