@@ -1,10 +1,7 @@
-// Move the Home component to a new file HomeClient.js and import it here
 import AboutClient from './Aboutclient';
+import { getPageSeo } from '../../lib/seo-config';
 
-export const metadata = {
-  title: 'About Us | CodeCatalyst',
-  description: 'Learn about CodeCatalyst\'s vision and mission to empower businesses with modern web solutions.',
-};
+export const metadata = getPageSeo('about');
 
 export default function Page() {
   return <AboutClient />;

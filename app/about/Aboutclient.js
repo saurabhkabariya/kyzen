@@ -155,7 +155,7 @@ export default function AboutPage() {
             variants={fadeInUpVariant}
             className="text-lg md:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed"
           >
-            CodeCatalyst is a team of passionate developers and designers committed to building exceptional digital experiences that empower businesses to thrive in the digital landscape.
+            Kyzen is a team of passionate developers and designers committed to building exceptional digital experiences that empower businesses to thrive in the digital landscape.
           </motion.p>
           
           <motion.div 

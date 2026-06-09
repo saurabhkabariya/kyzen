@@ -1,10 +1,7 @@
-// Move the Home component to a new file HomeClient.js and import it here
 import ContactClient from './Contactclient';
+import { getPageSeo } from '../../lib/seo-config';
 
-export const metadata = {
-  title: 'Contact Us | CodeCatalyst',
-  description: 'Get in touch with CodeCatalyst for web development, consultancy, and support.',
-};
+export const metadata = getPageSeo('contact');
 
 
 export default function Page() {

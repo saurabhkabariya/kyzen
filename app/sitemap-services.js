@@ -1,6 +1,6 @@
 // app/sitemap-services.js - Services-specific sitemap for better SEO targeting
 export default function sitemapServices() {
-  const baseUrl = 'https://codecatalystweb.vercel.app';
+  const baseUrl = 'https://kyzen-growth.vercel.app';
   const currentDate = new Date().toISOString();
   
   const services = [

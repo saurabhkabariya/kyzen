@@ -1,5 +1,6 @@
 import Section from '../components/Section';
 import ProjectCard from '../components/ProjectCard';
+import { getPageSeo } from '../../lib/seo-config';
 
 const projects = [
   {
@@ -7,6 +8,12 @@ const projects = [
     name: 'Solartech',
     description: 'A website customized for a solar energy company to showcase their services and drive leads.',
     liveLink: 'https://solartech-xi.vercel.app/',
+  },
+  {
+    image: '/hirelift.webp',
+    name: 'HireLift',
+    description: 'A SaaS product experience crafted to guide users from application to interview opportunities faster.',
+    liveLink: 'https://www.hirelift.tech/',
   },
   {
     image: '/picknbuy.webp',
@@ -19,12 +26,6 @@ const projects = [
     name: 'MotiveMentor',
     description: 'A startup MVP that helps users stay engaged with consistent progress tools, built to improve retention.',
     liveLink: 'https://motivementor.vercel.app/',
-  },
-  {
-    image: '/hirelift.webp',
-    name: 'HireLift',
-    description: 'A SaaS product experience crafted to guide users from application to interview opportunities faster.',
-    liveLink: 'https://www.hirelift.tech/',
   },
   {
     image: '/swifttech.webp',
@@ -40,10 +41,7 @@ const projects = [
   },
 ];
 
-export const metadata = {
-  title: 'Projects | Kyzen',
-  description: 'Explore business-focused web projects by Kyzen, built to improve clarity, trust, and conversion.',
-};
+export const metadata = getPageSeo('projects');
 
 export default function ProjectsPage() {
   return (

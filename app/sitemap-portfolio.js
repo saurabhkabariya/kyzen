@@ -1,6 +1,6 @@
 // app/sitemap-portfolio.js - Portfolio-specific sitemap for project showcase
 export default function sitemapPortfolio() {
-  const baseUrl = 'https://codecatalystweb.vercel.app';
+  const baseUrl = 'https://kyzen-growth.vercel.app';
   const currentDate = new Date().toISOString();
   
   const portfolioProjects = [

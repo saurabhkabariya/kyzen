@@ -1,6 +1,5 @@
-// app/robots.js - Dynamic robots.txt for maximum SEO and traffic
 export default function robots() {
-  const baseUrl = 'https://codecatalystweb.vercel.app';
+  const baseUrl = 'https://kyzen-growth.vercel.app';
   
   return {
     rules: [
@@ -10,41 +9,13 @@ export default function robots() {
         disallow: [
           '/api/',
           '/admin/',
-          '/_next/',
           '/private/',
           '/temp/',
           '/uploads/',
-          '*.pdf$',
-          '*.doc$',
-          '*.docx$',
           '/thank-you/',
-          '/success/',
-          '/404/',
-          '/500/'
+          '/success/'
         ],
       },
-      // Special rules for major search engines
-      {
-        userAgent: 'Googlebot',
-        allow: '/',
-        disallow: [
-          '/api/',
-          '/admin/',
-          '/private/'
-        ],
-        crawlDelay: 1,
-      },
-      {
-        userAgent: 'Bingbot',
-        allow: '/',
-        disallow: [
-          '/api/',
-          '/admin/',
-          '/private/'
-        ],
-        crawlDelay: 2,
-      },
-      // Allow social media crawlers for better sharing
       {
         userAgent: 'facebookexternalhit',
         allow: '/',
@@ -53,10 +24,7 @@ export default function robots() {
         userAgent: 'Twitterbot',
         allow: '/',
       },
-      {
-        userAgent: 'LinkedInBot',
-        allow: '/',
-      }
+      { userAgent: 'LinkedInBot', allow: '/' }
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
     host: baseUrl,

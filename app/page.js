@@ -1,10 +1,7 @@
-// Move the Home component to a new file HomeClient.js and import it here
 import HomeClient from './HomeClient';
+import { getPageSeo } from '../lib/seo-config';
 
-export const metadata = {
-  title: 'Home | Kyzen',
-  description: 'High-converting websites for startups and businesses. Kyzen designs and builds fast, modern websites that turn visitors into customers.',
-};
+export const metadata = getPageSeo('home');
 
 export default function Page() {
   return <HomeClient />;

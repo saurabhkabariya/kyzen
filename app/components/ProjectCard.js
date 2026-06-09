@@ -1,5 +1,6 @@
 "use client";
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { memo } from 'react';
 
@@ -13,10 +14,13 @@ const ProjectCard = memo(function ProjectCard({ image, name, description, oldPri
       transition={{ duration: 0.3, ease: 'easeOut' }}
       whileHover={{ y: -4, transition: { duration: 0.2 } }}
     >
-      <img
+      <Image
         src={image}
-        alt={name + ' project screenshot'}
-        className="w-full h-48 object-cover object-top bg-slate-900"
+        alt={`${name} project screenshot`}
+        width={1200}
+        height={800}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        className="h-48 w-full object-cover object-top bg-slate-900"
         loading="lazy"
         itemProp="image"
       />
