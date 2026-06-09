@@ -68,7 +68,7 @@ export default function Header() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3">
-          <Image src={Kyzen} alt="Kyzen" width={34} height={34} priority className="h-8 w-8 rounded-full object-cover" />
+          <Image src={Kyzen} alt="Kyzen" width={34} height={34} priority className="h-8 w-8 object-cover" />
           <span className="text-2xl font-bold tracking-[0.22em] text-white">KYZEN</span>
         </Link>
 
